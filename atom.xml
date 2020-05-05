@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://katherineqingbo.github.io/"/>
-  <updated>2020-04-23T03:51:15.994Z</updated>
+  <updated>2020-05-02T09:26:28.189Z</updated>
   <id>https://katherineqingbo.github.io/</id>
   
   <author>
@@ -15,6 +15,82 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>ES6常用方方法</title>
+    <link href="https://katherineqingbo.github.io/ES6%E5%B8%B8%E7%94%A8%E6%96%B9%E6%96%B9%E6%B3%95/"/>
+    <id>https://katherineqingbo.github.io/ES6%E5%B8%B8%E7%94%A8%E6%96%B9%E6%96%B9%E6%B3%95/</id>
+    <published>2020-05-02T09:19:49.000Z</published>
+    <updated>2020-05-02T09:26:28.189Z</updated>
+    
+    <summary type="html">
+    
+    </summary>
+    
+    
+      <category term="ES6" scheme="https://katherineqingbo.github.io/categories/ES6/"/>
+    
+    
+      <category term="vue" scheme="https://katherineqingbo.github.io/tags/vue/"/>
+    
+      <category term="ES6" scheme="https://katherineqingbo.github.io/tags/ES6/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>vue项目结构</title>
+    <link href="https://katherineqingbo.github.io/vue%E9%A1%B9%E7%9B%AE%E7%BB%93%E6%9E%84/"/>
+    <id>https://katherineqingbo.github.io/vue%E9%A1%B9%E7%9B%AE%E7%BB%93%E6%9E%84/</id>
+    <published>2020-05-02T07:36:37.000Z</published>
+    <updated>2020-05-02T09:12:35.730Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h2 id=&quot;一、目录结构&quot;&gt;&lt;a href=&quot;#一、目录结构&quot; class=&quot;headerlink&quot; title=&quot;一、目录结构&quot;&gt;&lt;/a&gt;一、目录结构&lt;/h2&gt;&lt;p&gt;&lt;img src=&quot;/images/vueTree.png&quot; alt=&quot;alt&quot;&gt;&lt;/p&gt;
+&lt;h2
+        
+      
+    
+    </summary>
+    
+    
+      <category term="vue" scheme="https://katherineqingbo.github.io/categories/vue/"/>
+    
+    
+      <category term="vue" scheme="https://katherineqingbo.github.io/tags/vue/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>vue脚手架搭建</title>
+    <link href="https://katherineqingbo.github.io/vue%E8%84%9A%E6%89%8B%E6%9E%B6%E6%90%AD%E5%BB%BA/"/>
+    <id>https://katherineqingbo.github.io/vue%E8%84%9A%E6%89%8B%E6%9E%B6%E6%90%AD%E5%BB%BA/</id>
+    <published>2020-04-30T09:14:59.000Z</published>
+    <updated>2020-05-02T07:33:08.144Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h2 id=&quot;一、安装-node-js&quot;&gt;&lt;a href=&quot;#一、安装-node-js&quot; class=&quot;headerlink&quot; title=&quot;一、安装 node.js&quot;&gt;&lt;/a&gt;一、安装 node.js&lt;/h2&gt;&lt;h2 id=&quot;二、安装-vue-cli&quot;&gt;&lt;a
+        
+      
+    
+    </summary>
+    
+    
+      <category term="vue" scheme="https://katherineqingbo.github.io/categories/vue/"/>
+    
+    
+      <category term="vue" scheme="https://katherineqingbo.github.io/tags/vue/"/>
+    
+  </entry>
   
   <entry>
     <title>layui前言</title>
