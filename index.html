@@ -215,8 +215,9 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
+              
 
-              <time title="创建时间：2020-05-11 11:07:19" itemprop="dateCreated datePublished" datetime="2020-05-11T11:07:19+08:00">2020-05-11</time>
+              <time title="创建时间：2020-05-11 11:07:19 / 修改时间：15:22:02" itemprop="dateCreated datePublished" datetime="2020-05-11T11:07:19+08:00">2020-05-11</time>
             </span>
 
           
@@ -230,7 +231,7 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          
+          <a id="more"></a>
       
     </div>
 
@@ -274,7 +275,7 @@
               <span class="post-meta-item-text">发表于</span>
               
 
-              <time title="创建时间：2020-05-11 11:02:04 / 修改时间：11:02:16" itemprop="dateCreated datePublished" datetime="2020-05-11T11:02:04+08:00">2020-05-11</time>
+              <time title="创建时间：2020-05-11 11:02:04 / 修改时间：15:22:02" itemprop="dateCreated datePublished" datetime="2020-05-11T11:02:04+08:00">2020-05-11</time>
             </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -297,7 +298,7 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          
+          <a id="more"></a>
       
     </div>
 
@@ -341,7 +342,7 @@
               <span class="post-meta-item-text">发表于</span>
               
 
-              <time title="创建时间：2020-05-11 11:00:42 / 修改时间：11:01:13" itemprop="dateCreated datePublished" datetime="2020-05-11T11:00:42+08:00">2020-05-11</time>
+              <time title="创建时间：2020-05-11 11:00:42 / 修改时间：15:22:02" itemprop="dateCreated datePublished" datetime="2020-05-11T11:00:42+08:00">2020-05-11</time>
             </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -364,7 +365,7 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          
+          <a id="more"></a>
       
     </div>
 
@@ -383,7 +384,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://katherineqingbo.github.io/%E7%BB%84%E4%BB%B6/">
+    <link itemprop="mainEntityOfPage" href="https://katherineqingbo.github.io/%E7%88%B6%E5%AD%90%E7%BB%84%E4%BB%B6%E4%BC%A0%E5%80%BC/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.png">
@@ -397,7 +398,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/%E7%BB%84%E4%BB%B6/" class="post-title-link" itemprop="url">组件</a>
+            <a href="/%E7%88%B6%E5%AD%90%E7%BB%84%E4%BB%B6%E4%BC%A0%E5%80%BC/" class="post-title-link" itemprop="url">父子组件传值</a>
         </h2>
 
         <div class="post-meta">
@@ -408,7 +409,7 @@
               <span class="post-meta-item-text">发表于</span>
               
 
-              <time title="创建时间：2020-05-11 10:59:44 / 修改时间：11:00:16" itemprop="dateCreated datePublished" datetime="2020-05-11T10:59:44+08:00">2020-05-11</time>
+              <time title="创建时间：2020-05-11 10:58:47 / 修改时间：16:22:12" itemprop="dateCreated datePublished" datetime="2020-05-11T10:58:47+08:00">2020-05-11</time>
             </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -431,74 +432,20 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          
-      
-    </div>
+          <a id="more"></a>
+<p>在Vue中，父组件通过<code>prop</code>给子组件下发数据，子组件通过事件<code>$emit</code>给父组件发送信息。</p>
+<h2 id="父组件向子组件传值"><a href="#父组件向子组件传值" class="headerlink" title="父组件向子组件传值"></a>父组件向子组件传值</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">&lt;!-- 父组件 --&gt;</span><br><span class="line">&lt;template&gt;</span><br><span class="line">  &lt;div&gt;</span><br><span class="line">    &lt;certificate-input :p_model&#x3D;&#39;pname&#39; :xi_model&#x3D;&quot;xiname&quot; :arr&#x3D;&quot;arr&quot; :break&#x3D;&quot;break&quot; :obj&#x3D;&quot;obj&quot;&gt;&lt;&#x2F;certificate-input&gt;</span><br><span class="line">  &lt;&#x2F;div&gt;</span><br><span class="line">&lt;&#x2F;template&gt;</span><br><span class="line">import CertificateInput from &#39;..&#x2F;common&#x2F;CertificateInput.vue&#39;</span><br><span class="line">export default &#123;</span><br><span class="line">    name: &#39;&#39;,</span><br><span class="line">    components: &#123;</span><br><span class="line">        CertificateInput </span><br><span class="line">    &#125;,</span><br><span class="line">    data() &#123;</span><br><span class="line">      return &#123;</span><br><span class="line">        pname:&quot;&quot;,</span><br><span class="line">        xiname:123,</span><br><span class="line">        arr:[],</span><br><span class="line">        break: false,</span><br><span class="line">        obj: &#123;&#125;</span><br><span class="line">    &#125;     </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line">&lt;!-- 子组件 --&gt;</span><br><span class="line">export default &#123;</span><br><span class="line">  props: &#123;</span><br><span class="line">    pModel: &#123;</span><br><span class="line">      type: String,</span><br><span class="line">      default: &#39;hello world&#39;</span><br><span class="line">    &#125;,</span><br><span class="line">    xiModel: &#123;</span><br><span class="line">      type: Number,</span><br><span class="line">      default: 0</span><br><span class="line">    &#125;,</span><br><span class="line">    break: &#123;</span><br><span class="line">      type: Boolean,</span><br><span class="line">      default: true</span><br><span class="line">    &#125;,</span><br><span class="line">    arr: &#123;</span><br><span class="line">      type: Array,</span><br><span class="line">      default: () &#x3D;&gt; &#123;</span><br><span class="line">        return []</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;,</span><br><span class="line">    arr: &#123;</span><br><span class="line">      type: Object,</span><br><span class="line">      default: () &#x3D;&gt; &#123;</span><br><span class="line">        return &#123;&#125;</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="子组件向父组件传值"><a href="#子组件向父组件传值" class="headerlink" title="子组件向父组件传值"></a>子组件向父组件传值</h2><p>每个Vue实例都实现了事件接口：使用<code>$on(evntName)</code>监听事件；使用<code>$emit(eventName,optionalPayload)</code>触发事件。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">&lt;!-- 父组件 --&gt;</span><br><span class="line">&lt;template&gt;</span><br><span class="line">    &lt;div class&#x3D;&quot;test&quot;&gt;</span><br><span class="line">      &lt;test-com @childFn&#x3D;&quot;parentFn&quot;&gt;&lt;&#x2F;test-com&gt;</span><br><span class="line">      &lt;br&#x2F;&gt; </span><br><span class="line">      子组件传来的值 : &#123;&#123;message&#125;&#125;</span><br><span class="line">    &lt;&#x2F;div&gt;</span><br><span class="line">&lt;&#x2F;template&gt;</span><br><span class="line"></span><br><span class="line">&lt;script&gt;</span><br><span class="line">export default &#123;</span><br><span class="line">    &#x2F;&#x2F; ...</span><br><span class="line">    data: &#123;</span><br><span class="line">        message: &#39;&#39;</span><br><span class="line">    &#125;,</span><br><span class="line">    methods: &#123;</span><br><span class="line">       parentFn(payload) &#123;</span><br><span class="line">        this.message &#x3D; payload;</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">&lt;&#x2F;script&gt;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">&lt;!-- 子组件 --&gt;</span><br><span class="line">&lt;template&gt; </span><br><span class="line">&lt;div class&#x3D;&quot;testCom&quot;&gt;</span><br><span class="line">    &lt;input type&#x3D;&quot;text&quot; v-model&#x3D;&quot;message&quot; &#x2F;&gt;</span><br><span class="line">    &lt;button @click&#x3D;&quot;click&quot;&gt;Send&lt;&#x2F;button&gt;</span><br><span class="line">&lt;&#x2F;div&gt;</span><br><span class="line">&lt;&#x2F;template&gt;</span><br><span class="line">&lt;script&gt;</span><br><span class="line">export default &#123;</span><br><span class="line">    &#x2F;&#x2F; ...</span><br><span class="line">    data() &#123;</span><br><span class="line">        return &#123;</span><br><span class="line">          &#x2F;&#x2F; 默认</span><br><span class="line">          message: &#39;我是来自子组件的消息&#39;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;,</span><br><span class="line">    methods: &#123;</span><br><span class="line">      click() &#123;</span><br><span class="line">            this.$emit(&#39;childFn&#39;, this.message);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;    </span><br><span class="line">&#125;</span><br><span class="line">&lt;&#x2F;script&gt;</span><br></pre></td></tr></table></figure>
+<h2 id="sync修饰符"><a href="#sync修饰符" class="headerlink" title=".sync修饰符"></a>.sync修饰符</h2><p>作为一个编译时的语法糖存在。它会被扩展为一个自动更新父组件属性的 v-on 监听器。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;comp :foo.sync&#x3D;&quot;bar&quot;&gt;&lt;&#x2F;comp&gt;</span><br></pre></td></tr></table></figure>
+<p>会被扩展为：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;comp :foo&#x3D;&quot;bar&quot; @update:foo&#x3D;&quot;val &#x3D;&gt; bar &#x3D; val&quot;&gt;&lt;&#x2F;comp&gt;</span><br></pre></td></tr></table></figure>
 
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-        
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://katherineqingbo.github.io/%E7%88%B6%E5%AD%90%E7%BB%84%E4%BB%B6%E4%BC%A0%E5%8F%82/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.png">
-      <meta itemprop="name" content="青波">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="前端">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/%E7%88%B6%E5%AD%90%E7%BB%84%E4%BB%B6%E4%BC%A0%E5%8F%82/" class="post-title-link" itemprop="url">父子组件传参</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-              
-
-              <time title="创建时间：2020-05-11 10:58:47 / 修改时间：10:58:57" itemprop="dateCreated datePublished" datetime="2020-05-11T10:58:47+08:00">2020-05-11</time>
-            </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/vue/" itemprop="url" rel="index"><span itemprop="name">vue</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          
+<p>当子组件需要更新 foo 的值时，它需要显式地触发一个更新事件：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">this.$emit(&#39;update:foo&#39;, newValue)</span><br></pre></td></tr></table></figure>
       
     </div>
 
@@ -542,7 +489,7 @@
               <span class="post-meta-item-text">发表于</span>
               
 
-              <time title="创建时间：2020-05-11 10:57:28 / 修改时间：10:57:42" itemprop="dateCreated datePublished" datetime="2020-05-11T10:57:28+08:00">2020-05-11</time>
+              <time title="创建时间：2020-05-11 10:57:28 / 修改时间：18:54:58" itemprop="dateCreated datePublished" datetime="2020-05-11T10:57:28+08:00">2020-05-11</time>
             </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -565,7 +512,98 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          
+          <a id="more"></a>
+<p>Vuex 是一个专为 Vue.js 应用程序开发的<code>状态管理模式</code>，可以帮助我们管理共享状态。在具有VueX的Vue项目中，我们只需要把这些值定义在VueX中，即可在整个Vue项目的组件中使用。</p>
+<p>在Vue项目开发中，需要监控项目中得各种值，为了提高效率，Vue提供了一款浏览器扩展——<code>VueDevtools</code>。</p>
+<h2 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h2><h3 id="初始化store下index-js中的内容"><a href="#初始化store下index-js中的内容" class="headerlink" title="初始化store下index.js中的内容"></a>初始化<code>store</code>下<code>index.js</code>中的内容</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">import Vue from &#39;vue&#39;</span><br><span class="line">import Vuex from &#39;vuex&#39;</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F;挂载Vuex</span><br><span class="line">Vue.use(Vuex)</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F;创建VueX对象</span><br><span class="line">const store &#x3D; new Vuex.Store(&#123;</span><br><span class="line">    state:&#123;</span><br><span class="line">        &#x2F;&#x2F;存放的键值对就是所要管理的状态</span><br><span class="line">        name:&#39;helloVueX&#39;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line">export default store</span><br></pre></td></tr></table></figure>
+<h3 id="将store挂载到当前项目的Vue实例当中去"><a href="#将store挂载到当前项目的Vue实例当中去" class="headerlink" title="将store挂载到当前项目的Vue实例当中去"></a>将store挂载到当前项目的Vue实例当中去</h3><p>打开main.js</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">import Vue from &#39;vue&#39;</span><br><span class="line">import App from &#39;.&#x2F;App&#39;</span><br><span class="line">import router from &#39;.&#x2F;router&#39;</span><br><span class="line">import store from &#39;.&#x2F;store&#39;</span><br><span class="line"></span><br><span class="line">Vue.config.productionTip &#x3D; false</span><br><span class="line"></span><br><span class="line">&#x2F;* eslint-disable no-new *&#x2F;</span><br><span class="line">new Vue(&#123;</span><br><span class="line">  el: &#39;#app&#39;,</span><br><span class="line">  router,</span><br><span class="line">  store,  &#x2F;&#x2F;store:store 和router一样，将我们创建的Vuex实例挂载到这个vue实例中</span><br><span class="line">  render: h &#x3D;&gt; h(App)</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<h3 id="在组件中使用Vuex"><a href="#在组件中使用Vuex" class="headerlink" title="在组件中使用Vuex"></a>在组件中使用Vuex</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&lt;template&gt;</span><br><span class="line">    &lt;div id&#x3D;&#39;app&#39;&gt;</span><br><span class="line">        name:</span><br><span class="line">        &lt;h1&gt;&#123;&#123; $store.state.name &#125;&#125;&lt;&#x2F;h1&gt;</span><br><span class="line">    &lt;&#x2F;div&gt;</span><br><span class="line">&lt;&#x2F;template&gt;</span><br></pre></td></tr></table></figure>
+<p>或者要在组件方法中使用</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">...,</span><br><span class="line">methods:&#123;</span><br><span class="line">    add()&#123;</span><br><span class="line">      console.log(this.$store.state.name)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;,</span><br><span class="line">...</span><br></pre></td></tr></table></figure>
+<h2 id="VueX中的核心内容"><a href="#VueX中的核心内容" class="headerlink" title="VueX中的核心内容"></a>VueX中的核心内容</h2><p>在VueX对象中，其实不止有state,还有用来操作state中数据的方法集，以及当我们需要对state中的数据需要加工的方法集等等成员。</p>
+<p><strong>成员列表：</strong></p>
+<ul>
+<li>state 存放状态</li>
+<li>mutations state成员操作</li>
+<li>getters 加工state成员给外界</li>
+<li>actions 异步操作</li>
+<li>modules 模块化状态管理</li>
+</ul>
+<h3 id="VueX的工作流程"><a href="#VueX的工作流程" class="headerlink" title="VueX的工作流程"></a>VueX的工作流程</h3><p>首先，Vue组件如果调用某个VueX的方法过程中需要向后端请求时或者说出现异步操作时，需要<code>dispatch VueX</code>中<code>actions</code>的方法，以保证数据的同步。可以说，<code>action</code>的存在就是为了让<code>mutations</code>中的方法能在异步操作中起作用。</p>
+<p>如果没有异步操作，那么我们就可以直接在组件内提交状态中的<code>Mutations</code>中自己编写的方法来达成对<code>state</code>成员的操作。不建议在组件中直接对state中的成员进行操作，这是因为直接修改(例如：this.$store.state.name = ‘hello’)的话不能被VueDevtools所监控到。</p>
+<p>最后被修改后的state成员会被渲染到组件的原位置当中去。</p>
+<p><img src="/images/vuex.png" alt="alt"></p>
+<h3 id="Mutations"><a href="#Mutations" class="headerlink" title="Mutations"></a>Mutations</h3><p>mutations是操作state数据的方法的集合，比如对该数据的修改、增加、删除等等。<br>mutations方法都有默认的形参：(<code>[state] [,payload]</code>)</p>
+<ul>
+<li>state是当前VueX对象中的state</li>
+<li>payload是该方法在被调用时传递参数使用的<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">&lt;!-- index.js --&gt;</span><br><span class="line">import Vue from &#39;vue&#39;</span><br><span class="line">import Vuex from &#39;vuex&#39;</span><br><span class="line"></span><br><span class="line">Vue.use(Vuex)</span><br><span class="line"></span><br><span class="line">const store &#x3D; new Vuex(&#123;</span><br><span class="line">    state:&#123;</span><br><span class="line">        name:&#39;helloVueX&#39;</span><br><span class="line">    &#125;,</span><br><span class="line">    mutations:&#123;</span><br><span class="line">        &#x2F;&#x2F;es6语法，等同edit:funcion()&#123;...&#125;</span><br><span class="line">        edit(state)&#123;</span><br><span class="line">            state.name &#x3D; &#39;jack&#39;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line">export default store</span><br></pre></td></tr></table></figure>
+而在组件中，我们需要这样去调用这个mutation——例如在App.vue的某个method中:<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">this.$store.commit(&#39;edit&#39;)</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<h3 id="Mutation传值"><a href="#Mutation传值" class="headerlink" title="Mutation传值"></a>Mutation传值</h3><p>在实际生产过程中，会遇到需要在提交某个mutation时需要携带一些参数给方法使用。<br>单个值提交时:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">this.$store.commit(&#39;edit&#39;,15)</span><br></pre></td></tr></table></figure>
+<p>当需要多参提交时，推荐把他们放在一个对象中来提交:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">this.$store.commit(&#39;edit&#39;,&#123;age:15,sex:&#39;男&#39;&#125;)</span><br></pre></td></tr></table></figure>
+<p>接收挂载的参数：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">edit(state,payload)&#123;</span><br><span class="line">  state.name &#x3D; &#39;jack&#39;</span><br><span class="line">  console.log(payload) &#x2F;&#x2F; 15或&#123;age:15,sex:&#39;男&#39;&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>另一种提交方式</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">this.$store.commit(&#123;</span><br><span class="line">    type:&#39;edit&#39;,</span><br><span class="line">    payload:&#123;</span><br><span class="line">        age:15,</span><br><span class="line">        sex:&#39;男&#39;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<h3 id="增删state中的成员"><a href="#增删state中的成员" class="headerlink" title="增删state中的成员"></a>增删state中的成员</h3><p>为了配合Vue的响应式数据，我们在Mutations的方法中，应当使用Vue提供的方法来进行操作。<br>如果使用delete或者xx.xx = xx的形式去删或增，则Vue不能对数据进行实时响应。</p>
+<ul>
+<li>Vue.set 为某个对象设置成员的值，若不存在则新增</li>
+</ul>
+<p>例如对state对象中添加一个age成员</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Vue.set(state,&quot;age&quot;,15)</span><br></pre></td></tr></table></figure>
+<ul>
+<li>Vue.delete 删除成员</li>
+</ul>
+<p>将刚刚添加的age成员删除</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Vue.delete(state,&#39;age&#39;)</span><br></pre></td></tr></table></figure>
+<h3 id="Actions"><a href="#Actions" class="headerlink" title="Actions"></a>Actions</h3><p>由于直接在mutation方法中进行异步操作，将会引起数据失效。所以提供了Actions来专门进行异步操作，最终提交mutation方法。</p>
+<p><strong>Actions中的方法有两个默认参数</strong></p>
+<ul>
+<li>context 上下文(相当于箭头函数中的this)对象</li>
+<li>payload 挂载参数</li>
+</ul>
+<p>由于<code>setTimeout</code>是异步操作，所以需要使用<code>actions</code></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">actions:&#123;</span><br><span class="line">    aEdit(context,payload)&#123;</span><br><span class="line">        setTimeout(()&#x3D;&gt;&#123;</span><br><span class="line">            context.commit(&#39;edit&#39;,payload)</span><br><span class="line">        &#125;,2000)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>在组件中调用:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">this.$store.dispatch(&#39;aEdit&#39;,&#123;age:15&#125;)</span><br></pre></td></tr></table></figure>
+<h3 id="Getters"><a href="#Getters" class="headerlink" title="Getters"></a>Getters</h3><p>可以对state中的成员加工后传递给外界</p>
+<p><strong>Getters中的方法有两个默认参数</strong></p>
+<ul>
+<li>state 当前VueX对象中的状态对象</li>
+<li>getters 当前getters对象，用于将getters下的其他getter拿来用<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">getters:&#123;</span><br><span class="line">    nameInfo(state)&#123;</span><br><span class="line">        return &quot;姓名:&quot;+state.name</span><br><span class="line">    &#125;,</span><br><span class="line">    fullInfo(state,getters)&#123;</span><br><span class="line">        return getters.nameInfo+&#39;年龄:&#39;+state.age</span><br><span class="line">    &#125;  </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+或者<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">const getters &#x3D; &#123;</span><br><span class="line">  loading: state &#x3D;&gt; state.user.loading,</span><br><span class="line">  token: state &#x3D;&gt; state.user.token,</span><br><span class="line">&#125;</span><br><span class="line">export default getters</span><br></pre></td></tr></table></figure>
+组件中调用<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">this.$store.getters.fullInfo</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<h3 id="Models"><a href="#Models" class="headerlink" title="Models"></a>Models</h3><p>当项目庞大，状态非常多时，可以采用模块化管理模式。Vuex 允许我们将 store 分割成模块（module）。每个模块拥有自己的 <code>state、mutation、action、getter、</code>甚至是嵌套子模块——从上至下进行同样方式的分割。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">models:&#123;</span><br><span class="line">    a:&#123;</span><br><span class="line">        state:&#123;&#125;,</span><br><span class="line">        getters:&#123;&#125;,</span><br><span class="line">        ....</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>组件内调用模块a的状态：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">this.$store.state.a</span><br></pre></td></tr></table></figure>
+<p>而提交或者<code>dispatch</code>某个方法和以前一样,会自动执行所有模块内的对应<code>type</code>的方法：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">this.$store.commit(&#39;editKey&#39;)</span><br><span class="line">this.$store.dispatch(&#39;aEditKey&#39;)</span><br></pre></td></tr></table></figure>
+<h3 id="模块的细节"><a href="#模块的细节" class="headerlink" title="模块的细节"></a>模块的细节</h3><ul>
+<li>模块中<code>mutations</code>和<code>getters</code>中的方法接受的第一个参数是自身局部模块内部的<code>state</code><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">models:&#123;</span><br><span class="line">    a:&#123;</span><br><span class="line">        state:&#123;key:5&#125;,</span><br><span class="line">        mutations:&#123;</span><br><span class="line">            editKey(state)&#123;</span><br><span class="line">                state.key &#x3D; 9</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;,</span><br><span class="line">        ....</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+<li><code>getters</code>中方法的第三个参数是根节点状态<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">models:&#123;</span><br><span class="line">    a:&#123;</span><br><span class="line">        state:&#123;key:5&#125;,</span><br><span class="line">        getters:&#123;</span><br><span class="line">            getKeyCount(state,getter,rootState)&#123;</span><br><span class="line">                return  rootState.key + state.key</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;,</span><br><span class="line">        ....</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+<li><code>actions</code>中方法获取局部模块状态是<code>context.state</code>,根节点状态是<code>context.rootState</code><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">models:&#123;</span><br><span class="line">    a:&#123;</span><br><span class="line">        state:&#123;key:5&#125;,</span><br><span class="line">        actions:&#123;</span><br><span class="line">            aEidtKey(context)&#123;</span><br><span class="line">                if(context.state.key &#x3D;&#x3D;&#x3D; context.rootState.key)&#123;</span><br><span class="line">                    context.commit(&#39;editKey&#39;)</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;,</span><br><span class="line">        ....</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<h2 id="store目录结构"><a href="#store目录结构" class="headerlink" title="store目录结构"></a>store目录结构</h2><p><img src="/images/store.png" alt="alt"></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">&lt;!-- index.js --&gt;</span><br><span class="line">import Vue from &#39;vue&#39;</span><br><span class="line">import Vuex from &#39;vuex&#39;</span><br><span class="line">import getters from &#39;.&#x2F;getters&#39;</span><br><span class="line"></span><br><span class="line">import user from &#39;.&#x2F;modules&#x2F;user&#39;</span><br><span class="line">import aside from &#39;.&#x2F;modules&#x2F;aside&#39;</span><br><span class="line">import homeTemp from &#39;.&#x2F;modules&#x2F;homeTemp&#39;</span><br><span class="line">import homeNormal from &#39;.&#x2F;modules&#x2F;homeNormal&#39;</span><br><span class="line">import homePage from &#39;.&#x2F;modules&#x2F;homePage&#39;</span><br><span class="line">Vue.use(Vuex)</span><br><span class="line"></span><br><span class="line">const store &#x3D; new Vuex.Store(&#123;</span><br><span class="line">  getters,</span><br><span class="line">  modules: &#123;</span><br><span class="line">    user,</span><br><span class="line">    aside,</span><br><span class="line">    homeTemp,</span><br><span class="line">    homeNormal,</span><br><span class="line">    homePage</span><br><span class="line">  &#125;</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line">export default store</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&lt;!-- getters.js --&gt;</span><br><span class="line">const getters &#x3D; &#123;</span><br><span class="line">  loading: state &#x3D;&gt; state.user.loading,</span><br><span class="line">  token: state &#x3D;&gt; state.user.token,</span><br><span class="line">  dialogMask: state &#x3D;&gt; state.homeTemp.dialogMask,</span><br><span class="line">&#125;</span><br><span class="line">export default getters</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">&lt;!-- dialogMask.js --&gt;</span><br><span class="line">const dialogMask &#x3D; &#123;</span><br><span class="line">  state: &#123;</span><br><span class="line">    dialogMask: false</span><br><span class="line">  &#125;,</span><br><span class="line">  mutations: &#123;</span><br><span class="line">    SET_MASKDIALOG: (state, dialogMask) &#x3D;&gt; &#123;</span><br><span class="line">      state.dialogMask &#x3D; dialogMask</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;,</span><br><span class="line">  actions: &#123;</span><br><span class="line">    maskDialog (&#123; commit &#125;, params) &#123;</span><br><span class="line">      commit(&#39;SET_MASKDIALOG&#39;, params)</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">export default dialogMask</span><br></pre></td></tr></table></figure>
+<p>组件内调用某个模块的状态</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">this.$store.getters.dialogMask</span><br></pre></td></tr></table></figure>
+<p>组件内某个模块更改状态</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">this.$store.dispatch(&#39;dialogMask&#39;, true)</span><br></pre></td></tr></table></figure>
+<p>或者</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">let params &#x3D; &#123;&#39;accountNo&#39;: this.loginForm.username, &#39;password&#39;: md5(this.loginForm.password)&#125;</span><br><span class="line">this.$store.dispatch(&#39;Login&#39;, params).then((res) &#x3D;&gt; &#123;</span><br><span class="line">  console.log(res)</span><br><span class="line">  localStorage.setItem(&#39;orgIds&#39;, res.data.data.orgId)</span><br><span class="line">  this.$router.push(&#123; path: &#39;&#x2F;&#39; &#125;)</span><br><span class="line">&#125;).catch((err) &#x3D;&gt; &#123;</span><br><span class="line">  console.log(err)</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
       
     </div>
 
@@ -609,7 +647,7 @@
               <span class="post-meta-item-text">发表于</span>
               
 
-              <time title="创建时间：2020-05-11 10:56:28 / 修改时间：15:10:00" itemprop="dateCreated datePublished" datetime="2020-05-11T10:56:28+08:00">2020-05-11</time>
+              <time title="创建时间：2020-05-11 10:56:28 / 修改时间：15:22:02" itemprop="dateCreated datePublished" datetime="2020-05-11T10:56:28+08:00">2020-05-11</time>
             </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -632,7 +670,8 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h2 id="promise介绍"><a href="#promise介绍" class="headerlink" title="promise介绍"></a>promise介绍</h2><p>1、主要用于异步计算<br>2、可以将异步操作队列化，按照期望的顺序执行，返回符合预期的结果<br>3、可以在对象之间传递和操作promise，帮助我们处理队列<br>4、promise是一个对象，对象和函数的区别就是对象可以保存状态，函数不可以（闭包除外）<br>5、并未剥夺函数return的能力，因此无需层层传递callback，进行回调获取数据<br>6、代码风格，容易理解，便于维护<br>7、多个异步等待合并便于解决</p>
+          <a id="more"></a>
+<h2 id="promise介绍"><a href="#promise介绍" class="headerlink" title="promise介绍"></a>promise介绍</h2><p>1、主要用于异步计算<br>2、可以将异步操作队列化，按照期望的顺序执行，返回符合预期的结果<br>3、可以在对象之间传递和操作promise，帮助我们处理队列<br>4、promise是一个对象，对象和函数的区别就是对象可以保存状态，函数不可以（闭包除外）<br>5、并未剥夺函数return的能力，因此无需层层传递callback，进行回调获取数据<br>6、代码风格，容易理解，便于维护<br>7、多个异步等待合并便于解决</p>
 <p><strong>promise有三个状态</strong> </p>
 <ul>
 <li>pending[待定]初始状态</li>
@@ -698,7 +737,7 @@
               <span class="post-meta-item-text">发表于</span>
               
 
-              <time title="创建时间：2020-05-11 10:53:46 / 修改时间：14:27:03" itemprop="dateCreated datePublished" datetime="2020-05-11T10:53:46+08:00">2020-05-11</time>
+              <time title="创建时间：2020-05-11 10:53:46 / 修改时间：15:22:02" itemprop="dateCreated datePublished" datetime="2020-05-11T10:53:46+08:00">2020-05-11</time>
             </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -721,7 +760,8 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h2 id="路由传参"><a href="#路由传参" class="headerlink" title="路由传参"></a>路由传参</h2><h3 id="定义vue-router的动态路由"><a href="#定义vue-router的动态路由" class="headerlink" title="定义vue-router的动态路由"></a>定义vue-router的动态路由</h3><table>
+          <a id="more"></a>
+<h2 id="路由传参"><a href="#路由传参" class="headerlink" title="路由传参"></a>路由传参</h2><h3 id="定义vue-router的动态路由"><a href="#定义vue-router的动态路由" class="headerlink" title="定义vue-router的动态路由"></a>定义vue-router的动态路由</h3><table>
 <thead>
 <tr>
 <th>声明式</th>
@@ -812,10 +852,16 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
-              
 
-              <time title="创建时间：2020-05-02 17:19:49 / 修改时间：17:26:28" itemprop="dateCreated datePublished" datetime="2020-05-02T17:19:49+08:00">2020-05-02</time>
+              <time title="创建时间：2020-05-02 17:19:49" itemprop="dateCreated datePublished" datetime="2020-05-02T17:19:49+08:00">2020-05-02</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-05-11 15:22:02" itemprop="dateModified" datetime="2020-05-11T15:22:02+08:00">2020-05-11</time>
+              </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="fa fa-folder-o"></i>
@@ -837,7 +883,7 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          
+          <a id="more"></a>
       
     </div>
 
@@ -879,10 +925,16 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
-              
 
-              <time title="创建时间：2020-05-02 15:36:37 / 修改时间：17:12:35" itemprop="dateCreated datePublished" datetime="2020-05-02T15:36:37+08:00">2020-05-02</time>
+              <time title="创建时间：2020-05-02 15:36:37" itemprop="dateCreated datePublished" datetime="2020-05-02T15:36:37+08:00">2020-05-02</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-05-11 15:22:02" itemprop="dateModified" datetime="2020-05-11T15:22:02+08:00">2020-05-11</time>
+              </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="fa fa-folder-o"></i>
@@ -904,7 +956,8 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h2 id="一、目录结构"><a href="#一、目录结构" class="headerlink" title="一、目录结构"></a>一、目录结构</h2><p><img src="/images/vueTree.png" alt="alt"></p>
+          <a id="more"></a>
+<h2 id="一、目录结构"><a href="#一、目录结构" class="headerlink" title="一、目录结构"></a>一、目录结构</h2><p><img src="/images/vueTree.png" alt="alt"></p>
 <h2 id="二、结构细分"><a href="#二、结构细分" class="headerlink" title="二、结构细分"></a>二、结构细分</h2><h3 id="build——-webpack配置"><a href="#build——-webpack配置" class="headerlink" title="build——[webpack配置]"></a>build——[webpack配置]</h3><p>build文件主要是webpack的配置，主要启动文件是dev-server.js，当我们输入npm run dev首先启动的就是dev-server.js，它会去检查node及npm版本，加载配置文件，启动服务。</p>
 <p><img src="/images/buildTree.png" alt="alt"></p>
 <h3 id="config——-vue项目配置"><a href="#config——-vue项目配置" class="headerlink" title="config——[vue项目配置]"></a>config——[vue项目配置]</h3><p>config文件主要是项目相关配置，我们常用的就是当端口冲突时配置监听端口，打包输出路径及命名等</p>
@@ -916,6 +969,125 @@
 <p>注：有时会安装指定依赖版本，需在依赖包名称后加上版本号信息，如安装11.1.4版本的vue-loader，输入npm install <a href="mailto:vue-loader@11.1.4">vue-loader@11.1.4</a></p>
 <h3 id="src——-项目核心文件"><a href="#src——-项目核心文件" class="headerlink" title="src——[项目核心文件]"></a>src——[项目核心文件]</h3><p><img src="/images/srcTree.png" alt="alt"></p>
 <h3 id="static——-静态资源文件"><a href="#static——-静态资源文件" class="headerlink" title="static——[静态资源文件]"></a>static——[静态资源文件]</h3><p><img src="/images/staticTree.png" alt="alt"></p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://katherineqingbo.github.io/vue%E8%84%9A%E6%89%8B%E6%9E%B6%E6%90%AD%E5%BB%BA/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.png">
+      <meta itemprop="name" content="青波">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="前端">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/vue%E8%84%9A%E6%89%8B%E6%9E%B6%E6%90%AD%E5%BB%BA/" class="post-title-link" itemprop="url">vue脚手架搭建</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2020-04-30 17:14:59" itemprop="dateCreated datePublished" datetime="2020-04-30T17:14:59+08:00">2020-04-30</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-05-11 15:22:02" itemprop="dateModified" datetime="2020-05-11T15:22:02+08:00">2020-05-11</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/vue/" itemprop="url" rel="index"><span itemprop="name">vue</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <a id="more"></a>
+<h2 id="一、安装-node-js"><a href="#一、安装-node-js" class="headerlink" title="一、安装 node.js"></a>一、安装 node.js</h2><h2 id="二、安装-vue-cli"><a href="#二、安装-vue-cli" class="headerlink" title="二、安装 vue-cli"></a>二、安装 vue-cli</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm install -g vue-cli</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ npm install -g cnpm --registry&#x3D;https:&#x2F;&#x2F;registry.npm.taobao.org</span><br><span class="line">$ cnpm install -g vue-cli</span><br></pre></td></tr></table></figure>
+<p>vue-cli安装常遇到的问题</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">在node环境下搜索vue.cmd位置，配置环境变量</span><br></pre></td></tr></table></figure>
+<h2 id="三、生成项目"><a href="#三、生成项目" class="headerlink" title="三、生成项目"></a>三、生成项目</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ vue init webpack [Vue-Project]</span><br></pre></td></tr></table></figure>
+<h2 id="四、安装依赖"><a href="#四、安装依赖" class="headerlink" title="四、安装依赖"></a>四、安装依赖</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ cd [Vue-Project]</span><br><span class="line">$ cnpm install</span><br></pre></td></tr></table></figure>
+<h2 id="五、启动项目"><a href="#五、启动项目" class="headerlink" title="五、启动项目"></a>五、启动项目</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm run dev</span><br></pre></td></tr></table></figure>
+<h2 id="六、安装sass依赖包"><a href="#六、安装sass依赖包" class="headerlink" title="六、安装sass依赖包"></a>六、安装sass依赖包</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">1.安装sass</span><br><span class="line">$ npm install --save-dev node-sass</span><br><span class="line">$ npm install --save-dev sass-loader</span><br><span class="line"></span><br><span class="line">2.在build文件夹下的webpack.base.conf.js的rules里面添加配置</span><br><span class="line">&#123;</span><br><span class="line">    test: &#x2F;\.scss$&#x2F;, loaders: [&#39;style&#39;, &#39;css&#39;, &#39;sass&#39;]</span><br><span class="line">&#125;</span><br><span class="line">3.在APP.vue中修改style标签</span><br><span class="line"></span><br><span class="line">&lt;style lang&#x3D;&quot;scss&quot;&gt;&lt;&#x2F;style&gt;</span><br></pre></td></tr></table></figure>
+<h2 id="七、rem的使用"><a href="#七、rem的使用" class="headerlink" title="七、rem的使用"></a>七、rem的使用</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">index.html文件中引入</span><br><span class="line">    &lt;meta name&#x3D;&quot;viewport&quot; content&#x3D;&quot;width&#x3D;device-width, initial-scale&#x3D;1.0&quot;&gt;</span><br><span class="line">    &#x2F;&#x2F; &lt;script src&#x3D;&quot;http:&#x2F;&#x2F;g.tbcdn.cn&#x2F;mtb&#x2F;lib-flexible&#x2F;0.3.4&#x2F;??flexible_css.js,flexible.js&quot;&gt;&lt;&#x2F;script&gt;</span><br><span class="line"> </span><br><span class="line">mixin.scss文件中引入</span><br><span class="line"> </span><br><span class="line">    @function px_rem($px, $base-font-size: 37.5px) &#123;</span><br><span class="line">      @return ($px &#x2F; $base-font-size) * 1rem;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">在scss文件中使用</span><br><span class="line">    @import &quot;static&#x2F;css&#x2F;mixin.scss&quot;;</span><br><span class="line">    h2&#123;</span><br><span class="line">      height: px_rem(50px);</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+
+<p> demo</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">&lt;template&gt;</span><br><span class="line">  &lt;div id&#x3D;&quot;DownLoadPage&quot;&gt;</span><br><span class="line">  &lt;&#x2F;div&gt;</span><br><span class="line">&lt;&#x2F;template&gt;</span><br><span class="line">&lt;script&gt;</span><br><span class="line">require(&#39;..&#x2F;utils&#x2F;flexible.js&#39;)</span><br><span class="line">export default &#123;</span><br><span class="line">  name: &#39;DownLoadPage&#39;,</span><br><span class="line">  data () &#123;</span><br><span class="line">    return &#123;</span><br><span class="line">      </span><br><span class="line">    &#125;</span><br><span class="line">  &#125;,</span><br><span class="line">  mounted () &#123;</span><br><span class="line">   </span><br><span class="line">  &#125;,</span><br><span class="line">  computed: &#123;</span><br><span class="line">   </span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line">&lt;&#x2F;script&gt;</span><br><span class="line">&lt;style lang&#x3D;&quot;scss&quot; scoped&gt;</span><br><span class="line">@import &#39;src&#x2F;assets&#x2F;styles&#x2F;mobile&#x2F;mixin&#39;;</span><br><span class="line">html,body&#123;</span><br><span class="line">  min-width: px_rem(320px);</span><br><span class="line">&#125;</span><br><span class="line">&lt;&#x2F;style&gt;</span><br></pre></td></tr></table></figure>
+
+<h2 id="八、element-ui的全局安装"><a href="#八、element-ui的全局安装" class="headerlink" title="八、element-ui的全局安装"></a>八、element-ui的全局安装</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm install element-ui  --save-dev</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">整体引入</span><br><span class="line">在main.js中</span><br><span class="line">import ElementUI from &#39;element-ui&#39;;</span><br><span class="line">import &#39;element-ui&#x2F;lib&#x2F;theme-chalk&#x2F;index.css&#39;;</span><br><span class="line"></span><br><span class="line">Vue.use(ElementUI)</span><br></pre></td></tr></table></figure>
+<h2 id="九、element-ui的按需安装"><a href="#九、element-ui的按需安装" class="headerlink" title="九、element-ui的按需安装"></a>九、element-ui的按需安装</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">按需引入element-ui</span><br><span class="line">$ npm install element-ui  --save-dev</span><br><span class="line">$ npm install babel-plugin-component -D</span><br></pre></td></tr></table></figure>
+<p>将 .babelrc 修改为：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  &quot;presets&quot;: [</span><br><span class="line">    [&quot;env&quot;, &#123;</span><br><span class="line">      &quot;modules&quot;: false,</span><br><span class="line">      &quot;targets&quot;: &#123;</span><br><span class="line">        &quot;browsers&quot;: [&quot;&gt; 1%&quot;, &quot;last 2 versions&quot;, &quot;not ie &lt;&#x3D; 8&quot;]</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;],</span><br><span class="line">    &quot;stage-2&quot;,</span><br><span class="line">    [&quot;es2015&quot;, &#123; &quot;modules&quot;: false &#125;]</span><br><span class="line">  ],</span><br><span class="line">  &quot;plugins&quot;: [</span><br><span class="line">    &quot;transform-vue-jsx&quot;, </span><br><span class="line">    &quot;transform-runtime&quot;,</span><br><span class="line">    [</span><br><span class="line">      &quot;component&quot;,</span><br><span class="line">      &#123;</span><br><span class="line">        &quot;libraryName&quot;: &quot;element-ui&quot;,</span><br><span class="line">        &quot;styleLibraryName&quot;: &quot;theme-chalk&quot;</span><br><span class="line">      &#125;</span><br><span class="line">    ]</span><br><span class="line">  ]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>那么需要在 main.js 中写入以下内容：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">import &#123; Button, Select &#125; from &#39;element-ui&#39;</span><br><span class="line">Vue.prototype.$ELEMENT &#x3D; &#123; size: &#39;small&#39; &#125;</span><br><span class="line">Vue.use(Button)</span><br><span class="line">Vue.use(Select)</span><br></pre></td></tr></table></figure>
+<h2 id="十、安装es2015"><a href="#十、安装es2015" class="headerlink" title="十、安装es2015"></a>十、安装es2015</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm install babel-preset-es2015 --save-dev</span><br></pre></td></tr></table></figure>
+<h2 id="十一、全局安装echarts"><a href="#十一、全局安装echarts" class="headerlink" title="十一、全局安装echarts"></a>十一、全局安装echarts</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">$ npm install echarts --save-dev</span><br><span class="line">&#x2F;&#x2F; 引入echarts</span><br><span class="line">import echarts from &#39;echarts&#39;</span><br><span class="line"></span><br><span class="line">Vue.prototype.$echarts &#x3D; echarts</span><br></pre></td></tr></table></figure>
+<h2 id="十二、按需安装echarts"><a href="#十二、按需安装echarts" class="headerlink" title="十二、按需安装echarts"></a>十二、按需安装echarts</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;&#x2F; 引入基本模板</span><br><span class="line">let echarts &#x3D; require(&#39;echarts&#x2F;lib&#x2F;echarts&#39;)</span><br><span class="line">&#x2F;&#x2F; 引入柱状图组件</span><br><span class="line">require(&#39;echarts&#x2F;lib&#x2F;chart&#x2F;bar&#39;)</span><br><span class="line">&#x2F;&#x2F; 引入提示框和title组件</span><br><span class="line">require(&#39;echarts&#x2F;lib&#x2F;component&#x2F;tooltip&#39;)</span><br><span class="line">require(&#39;echarts&#x2F;lib&#x2F;component&#x2F;title&#39;)</span><br><span class="line">export default &#123;</span><br><span class="line">  name: &#39;hello&#39;,</span><br><span class="line">  data() &#123;</span><br><span class="line">    return &#123;</span><br><span class="line">      msg: &#39;Welcome to Your Vue.js App&#39;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;,</span><br><span class="line">  mounted() &#123;</span><br><span class="line">    this.drawLine();</span><br><span class="line">  &#125;,</span><br><span class="line">  methods: &#123;</span><br><span class="line">    drawLine() &#123;</span><br><span class="line">      &#x2F;&#x2F; 基于准备好的dom，初始化echarts实例</span><br><span class="line">      let myChart &#x3D; echarts.init(document.getElementById(&#39;myChart&#39;))</span><br><span class="line">      &#x2F;&#x2F; 绘制图表</span><br><span class="line">      myChart.setOption(&#123;</span><br><span class="line">        title: &#123; text: &#39;ECharts 入门示例&#39; &#125;,</span><br><span class="line">        tooltip: &#123;&#125;,</span><br><span class="line">        xAxis: &#123;</span><br><span class="line">          data: [&quot;衬衫&quot;, &quot;羊毛衫&quot;, &quot;雪纺衫&quot;, &quot;裤子&quot;, &quot;高跟鞋&quot;, &quot;袜子&quot;]</span><br><span class="line">        &#125;,</span><br><span class="line">        yAxis: &#123;&#125;,</span><br><span class="line">        series: [&#123;</span><br><span class="line">          name: &#39;销量&#39;,</span><br><span class="line">          type: &#39;bar&#39;,</span><br><span class="line">          data: [5, 20, 36, 10, 10, 20]</span><br><span class="line">        &#125;]</span><br><span class="line">      &#125;);</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="十三、数据状态管理"><a href="#十三、数据状态管理" class="headerlink" title="十三、数据状态管理"></a>十三、数据状态管理</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">$ npm install vuex --save</span><br><span class="line"></span><br><span class="line">import Vue from &#39;vue&#39;</span><br><span class="line">import Vuex from &#39;vuex&#39;</span><br><span class="line"></span><br><span class="line">Vue.use(Vuex)</span><br></pre></td></tr></table></figure>
+<h2 id="十四、http服务模块"><a href="#十四、http服务模块" class="headerlink" title="十四、http服务模块"></a>十四、http服务模块</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm install axios --save-dev</span><br></pre></td></tr></table></figure>
+<h2 id="十五、安装jquery"><a href="#十五、安装jquery" class="headerlink" title="十五、安装jquery"></a>十五、安装jquery</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">$ npm install jquery --save-dev</span><br><span class="line">配置webpack.base.conf.js</span><br><span class="line">在module.exports中添加一段代码，</span><br><span class="line">&#x2F;&#x2F; 原有代码</span><br><span class="line">resolve: &#123;</span><br><span class="line">  extensions: [&#39;.js&#39;, &#39;.vue&#39;, &#39;.json&#39;],</span><br><span class="line">  alias: &#123;</span><br><span class="line">    &#39;vue$&#39;: &#39;vue&#x2F;dist&#x2F;vue.esm.js&#39;,</span><br><span class="line">    &#39;@&#39;: resolve(&#39;src&#39;)</span><br><span class="line">  &#125;</span><br><span class="line">&#125;,</span><br><span class="line">&#x2F;&#x2F; 添加代码</span><br><span class="line">plugins: [</span><br><span class="line">  new webpack.ProvidePlugin(&#123;</span><br><span class="line">    $: &quot;jquery&quot;,</span><br><span class="line">    jQuery: &quot;jquery&quot;,</span><br><span class="line">    jquery: &quot;jquery&quot;,</span><br><span class="line">    &quot;window.jQuery&quot;: &quot;jquery&quot;</span><br><span class="line">  &#125;)</span><br><span class="line">],</span><br><span class="line">&#x2F;&#x2F; 原有代码</span><br><span class="line">module: &#123;</span><br><span class="line">  rules: [</span><br><span class="line">&#x2F;&#x2F; ......</span><br><span class="line">  ]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="十六、vue-amap-高德地图"><a href="#十六、vue-amap-高德地图" class="headerlink" title="十六、vue-amap 高德地图"></a>十六、vue-amap 高德地图</h2><p><a href="https://elemefe.github.io/vue-amap/#/" target="_blank" rel="noopener">https://elemefe.github.io/vue-amap/#/</a></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br></pre></td><td class="code"><pre><span class="line">$ npm install vue-amap --save</span><br><span class="line">$ npm install geocoder</span><br><span class="line">打开webpack.base.conf.js文件，找到module.exports，在externals对象中加入一行：’AMap’: ‘AMap’</span><br><span class="line">externals: &#123;</span><br><span class="line">   &#39;AMap&#39;: &#39;AMap&#39;,</span><br><span class="line">&#125;,</span><br><span class="line">配置.eslintrc.js全局的AMap</span><br><span class="line">globals: &#123;</span><br><span class="line">    &quot;AMap&quot;:&quot;AMap&quot;,</span><br><span class="line">  &#125;</span><br><span class="line">在main.js中配置</span><br><span class="line">import VueAMap from &#39;vue-amap&#39;</span><br><span class="line">配置key值</span><br><span class="line">VueAMap.initAMapApiLoader(&#123;</span><br><span class="line">  key: &#39;a83c56afba46482fd8fba666e27231c2&#39;,</span><br><span class="line">  plugin: [&#39;AMap.Autocomplete&#39;, &#39;AMap.PlaceSearch&#39;, &#39;AMap.Scale&#39;, &#39;AMap.OverView&#39;, &#39;AMap.ToolBar&#39;, &#39;AMap.MapType&#39;, &#39;AMap.PolyEditor&#39;, &#39;AMap.CircleEditor&#39;],</span><br><span class="line">  &#x2F;&#x2F; 默认高德 sdk 版本为 1.4.4</span><br><span class="line">  v: &#39;1.4.4&#39;</span><br><span class="line">&#125;)</span><br><span class="line">创建一个vue文件</span><br><span class="line">&lt;template&gt;</span><br><span class="line">  &lt;div id&#x3D;&quot;app&quot;&gt;</span><br><span class="line">    &lt;h3 class&#x3D;&quot;title&quot;&gt;&#123;&#123; msg &#125;&#125;&lt;&#x2F;h3&gt;</span><br><span class="line">    &lt;div class&#x3D;&quot;amap-wrapper&quot;&gt;</span><br><span class="line">      &lt;el-amap class&#x3D;&quot;amap-box&quot; :vid&#x3D;&quot;&#39;amap-vue&#39;&quot;&gt;&lt;&#x2F;el-amap&gt;</span><br><span class="line">    &lt;&#x2F;div&gt;</span><br><span class="line">  &lt;&#x2F;div&gt;</span><br><span class="line">&lt;&#x2F;template&gt;</span><br><span class="line"></span><br><span class="line">&lt;script&gt;</span><br><span class="line">export default &#123;</span><br><span class="line">  data () &#123;</span><br><span class="line">    return &#123;</span><br><span class="line">      msg: &#39;vue-amap向你问好！&#39;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line">&lt;&#x2F;script&gt;</span><br><span class="line"></span><br><span class="line">&lt;style&gt;</span><br><span class="line">.amap-wrapper &#123;</span><br><span class="line">  width: 100%;</span><br><span class="line">  height: 800px;</span><br><span class="line">&#125;</span><br><span class="line">&lt;&#x2F;style&gt;</span><br></pre></td></tr></table></figure>
+<h2 id="十七、适配低版本"><a href="#十七、适配低版本" class="headerlink" title="十七、适配低版本"></a>十七、适配低版本</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">首先</span><br><span class="line">安装babel-polyfill </span><br><span class="line">$ npm install babel-polyfill --save-dev</span><br><span class="line"></span><br><span class="line">入口文件引用</span><br><span class="line">在main.js中引用 </span><br><span class="line">import &#39;babel-polyfill&#39;</span><br><span class="line"></span><br><span class="line">vue-cli 配置修改</span><br><span class="line">如果也是用了官方脚手架vue-cli，还需要在webpack.config.js配置文件中做各修改，用 </span><br><span class="line">module.exports &#x3D; &#123; </span><br><span class="line">  entry: &#123; </span><br><span class="line">    app: [&quot;babel-polyfill&quot;, &quot;.&#x2F;src&#x2F;main.js&quot;] </span><br><span class="line">  &#125; </span><br><span class="line">&#125;; </span><br><span class="line">替代 </span><br><span class="line">module.exports &#x3D; &#123; </span><br><span class="line">  entry: &#123; </span><br><span class="line">    app: &#39;.&#x2F;src&#x2F;main.js&#39; </span><br><span class="line">  &#125; </span><br><span class="line">&#125; </span><br><span class="line">如果有多配置可以在webpack.base.config.js修改</span><br></pre></td></tr></table></figure>
+<h2 id="十九、分环境打包"><a href="#十九、分环境打包" class="headerlink" title="十九、分环境打包"></a>十九、分环境打包</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br></pre></td><td class="code"><pre><span class="line">安装cross-env</span><br><span class="line"></span><br><span class="line">$ npm i --save-dev cross-env</span><br><span class="line">config文件夹下新建文件sit.env.js</span><br><span class="line"></span><br><span class="line">module.exports &#x3D; &#123;</span><br><span class="line">  NODE_ENV: &#39;&quot;production&quot;&#39;,</span><br><span class="line">  ENV_CONFIG: &#39;&quot;sit&quot;&#39;,</span><br><span class="line">  BASE_API: &#39;&quot;https:&#x2F;&#x2F;api-sit&quot;&#39;</span><br><span class="line">&#125;</span><br><span class="line">修改项目package.json文件</span><br><span class="line"></span><br><span class="line">NODE_ENV最好都设成production，因为在utils.js只做了production一种判定，亲测不会影响各环境API参数</span><br><span class="line"></span><br><span class="line">&quot;scripts&quot;: &#123;</span><br><span class="line">  &quot;dev&quot;: &quot;webpack-dev-server --inline --progress --config build&#x2F;webpack.dev.conf.js&quot;,</span><br><span class="line">  &quot;start&quot;: &quot;npm run dev&quot;,</span><br><span class="line">  &quot;build&quot;: &quot;node build&#x2F;build.js&quot;,</span><br><span class="line">  &quot;build:test&quot;: &quot;cross-env NODE_ENV&#x3D;production env_config&#x3D;test node build&#x2F;build.js&quot;,</span><br><span class="line">  &quot;build:pre&quot;: &quot;cross-env NODE_ENV&#x3D;production env_config&#x3D;pre node build&#x2F;build.js&quot;,</span><br><span class="line">  &quot;build:prod&quot;: &quot;cross-env NODE_ENV&#x3D;production env_config&#x3D;prod node build&#x2F;build.js&quot;</span><br><span class="line"> &#125;,</span><br><span class="line">修改config&#x2F;index.js文件中build参数</span><br><span class="line"></span><br><span class="line">这里的参数会在build&#x2F;webpackage.prod.conf.js中使用到</span><br><span class="line"></span><br><span class="line">build: &#123;</span><br><span class="line">    &#x2F;&#x2F; 添加test pre prod 三处环境的配制</span><br><span class="line">    prodEnv: require(&#39;.&#x2F;prod.env&#39;),</span><br><span class="line">    testEnv: require(&#39;.&#x2F;test.env&#39;),</span><br><span class="line">    &#x2F;&#x2F; Template for index.html</span><br><span class="line">    index: path.resolve(__dirname, &#39;..&#x2F;dist&#x2F;index.html&#39;),</span><br><span class="line"></span><br><span class="line">    &#x2F;&#x2F; Paths</span><br><span class="line">    assetsRoot: path.resolve(__dirname, &#39;..&#x2F;dist&#39;),</span><br><span class="line">    assetsSubDirectory: &#39;static&#39;,</span><br><span class="line">    ...</span><br><span class="line"></span><br><span class="line">在webpackage.prod.conf.js中使用构建环境参数</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F; 个性env常量的定义</span><br><span class="line">&#x2F;&#x2F; const env &#x3D; require(&#39;..&#x2F;config&#x2F;prod.env&#39;)</span><br><span class="line">const env &#x3D; config.build[process.env.env_config+&#39;Env&#39;]</span><br><span class="line"></span><br><span class="line">调整build&#x2F;build.js</span><br><span class="line"></span><br><span class="line">删除process.env.NODE_ENV的赋值，修改spinner的定义，调整后的内容如下：</span><br><span class="line"></span><br><span class="line">&#39;use strict&#39;</span><br><span class="line">require(&#39;.&#x2F;check-versions&#39;)()</span><br><span class="line">&#x2F;&#x2F; 注释掉的代码</span><br><span class="line">&#x2F;&#x2F; process.env.NODE_ENV &#x3D; &#39;production&#39;</span><br><span class="line">const ora &#x3D; require(&#39;ora&#39;)</span><br><span class="line">const rm &#x3D; require(&#39;rimraf&#39;)</span><br><span class="line">const path &#x3D; require(&#39;path&#39;)</span><br><span class="line">const chalk &#x3D; require(&#39;chalk&#39;)</span><br><span class="line">const webpack &#x3D; require(&#39;webpack&#39;)</span><br><span class="line">const config &#x3D; require(&#39;..&#x2F;config&#39;)</span><br><span class="line">const webpackConfig &#x3D; require(&#39;.&#x2F;webpack.prod.conf&#39;)</span><br><span class="line">&#x2F;&#x2F; 修改spinner的定义</span><br><span class="line">&#x2F;&#x2F; const spinner &#x3D; ora(&#39;building for production...&#39;)</span><br><span class="line">var spinner &#x3D; ora(&#39;building for &#39; + process.env.NODE_ENV + &#39; of &#39; + process.env.env_config+ &#39; mode...&#39; )</span><br><span class="line">spinner.start()</span><br><span class="line">&#x2F;&#x2F;更多的其它内容，不需要做任何调整的内容 ...</span><br></pre></td></tr></table></figure>
+<h2 id="二十、登录"><a href="#二十、登录" class="headerlink" title="二十、登录"></a>二十、登录</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">js-cookie 一个轻量的JavaScript库来处理cookie</span><br></pre></td></tr></table></figure>
+<h2 id="二十二-、svg图标的使用"><a href="#二十二-、svg图标的使用" class="headerlink" title="二十二 、svg图标的使用"></a>二十二 、svg图标的使用</h2><p><a href="http://www.iconfont.cn/plus" target="_blank" rel="noopener">http://www.iconfont.cn/plus</a></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">1. 安装</span><br><span class="line">$npm install vue-svg-icon --save-dev</span><br><span class="line">2. 将svg图片放入src&#x2F;svg</span><br><span class="line">这里安利一个svg图片库iconfont</span><br><span class="line"></span><br><span class="line">src&#x2F;svg路径暂时不可配置</span><br><span class="line"></span><br><span class="line">3. 在项目的main.js入口引入vue-svg-icon和需要使用的svg文件名（不需扩展名）</span><br><span class="line">import Icon from &#39;vue-svg-icon&#x2F;Icon.vue&#39;;</span><br><span class="line">Vue.component(&#39;icon&#39;, Icon);</span><br><span class="line"></span><br><span class="line">4. 在网页中使用icon标签就可以啦！</span><br><span class="line">&lt;icon name&#x3D;&quot;chameleon&quot; scale&#x3D;&quot;20&quot;&gt;&lt;&#x2F;icon&gt;</span><br></pre></td></tr></table></figure>
+<h2 id="二十二、mock数据"><a href="#二十二、mock数据" class="headerlink" title="二十二、mock数据"></a>二十二、mock数据</h2><p><a href="http://mockjs.com/" target="_blank" rel="noopener">http://mockjs.com/</a></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$npm install mockjs</span><br></pre></td></tr></table></figure>
+<h2 id="二十一、打包"><a href="#二十一、打包" class="headerlink" title="二十一、打包"></a>二十一、打包</h2><p>避免出现空白页</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">第一种解决方案</span><br><span class="line">打开config文件夹下的index.js，build模块，修改</span><br><span class="line">assetsPublicPath 的值为 assetsPublicPath: &#39;.&#x2F;&#39;</span><br><span class="line"></span><br><span class="line">第二种解决方案</span><br><span class="line">修改build文件夹下webpack.prod.conf.js中的output模块为</span><br><span class="line">output: &#123;</span><br><span class="line">    publicPath: &#39;.&#x2F;&#39;,</span><br><span class="line">    path: config.build.assetsRoot,</span><br><span class="line">    filename: utils.assetsPath(&#39;js&#x2F;[name].[chunkhash].js&#39;),</span><br><span class="line">    chunkFilename: utils.assetsPath(&#39;js&#x2F;[id].[chunkhash].js&#39;)</span><br><span class="line">&#125;,</span><br><span class="line"></span><br><span class="line">执行$npm run build:prod</span><br></pre></td></tr></table></figure>
+
+<p><a href="https://www.cnblogs.com/moqiutao/p/7496718.html" target="_blank" rel="noopener" title="避免背景图片路径出错解决方案">避免背景图片路径出错解决方案</a></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">修改build文件夹下的utils.js代码为</span><br><span class="line">if (options.extract) &#123;</span><br><span class="line">  return ExtractTextPlugin.extract(&#123;</span><br><span class="line">    use: loaders,</span><br><span class="line">    fallback: &#39;vue-style-loader&#39;,</span><br><span class="line">    publicPath: &#39;..&#x2F;..&#x2F;&#39;</span><br><span class="line">  &#125;)</span><br><span class="line">&#125; else &#123;</span><br><span class="line">  return [&#39;vue-style-loader&#39;].concat(loaders)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">增加一行代码      publicPath: &#39;..&#x2F;..&#x2F;&#39;</span><br></pre></td></tr></table></figure>
+<h2 id="二十二-vue-cli打包文件优化工具-webpack-bundle-analyzer"><a href="#二十二-vue-cli打包文件优化工具-webpack-bundle-analyzer" class="headerlink" title="二十二 vue cli打包文件优化工具 webpack-bundle-analyzer"></a>二十二 vue cli打包文件优化工具 webpack-bundle-analyzer</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">在vue-cli中不需要配置  直接执行</span><br><span class="line">$ npm run build --report</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">需要配置</span><br><span class="line">安装webpack-bundle-analyzer插件</span><br><span class="line"></span><br><span class="line">$ npm install webpack-bundle-analyzer -–save-dev</span><br><span class="line"></span><br><span class="line">在build&#x2F;webpack.prod.config.js中添加配置</span><br><span class="line"></span><br><span class="line">if (config.build.bundleAnalyzerReport) &#123;</span><br><span class="line">    const BundleAnalyzerPlugin &#x3D; require(&#39;webpack-bundle-analyzer&#39;).BundleAnalyzerPlugin;</span><br><span class="line">    webpackConfig.plugins.push(new BundleAnalyzerPlugin());</span><br><span class="line">&#125;</span><br><span class="line">在package.json的scripts中添加配置</span><br><span class="line"></span><br><span class="line">“analyz”: “NODE_ENV&#x3D;production npm_config_report&#x3D;true npm run build”</span><br><span class="line"></span><br><span class="line">运行命令</span><br><span class="line"></span><br><span class="line">$ npm run analyz</span><br></pre></td></tr></table></figure>
+<h2 id="二十三-字体"><a href="#二十三-字体" class="headerlink" title="二十三 字体"></a>二十三 字体</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm install font-awesome</span><br></pre></td></tr></table></figure>
+<h2 id="二十四-404页面跳转处理"><a href="#二十四-404页面跳转处理" class="headerlink" title="二十四 404页面跳转处理"></a>二十四 404页面跳转处理</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line">在新建文件夹 WEB-INF 下新建 web.xml 内容如下</span><br><span class="line"></span><br><span class="line">&lt;?xml version&#x3D;&quot;1.0&quot; encoding&#x3D;&quot;UTF-8&quot;?&gt;</span><br><span class="line">&lt;web-app xmlns:xsi&#x3D;&quot;http:&#x2F;&#x2F;www.w3.org&#x2F;2001&#x2F;XMLSchema-instance&quot;</span><br><span class="line">	xmlns&#x3D;&quot;http:&#x2F;&#x2F;xmlns.jcp.org&#x2F;xml&#x2F;ns&#x2F;javaee&quot;</span><br><span class="line">	xsi:schemaLocation&#x3D;&quot;http:&#x2F;&#x2F;xmlns.jcp.org&#x2F;xml&#x2F;ns&#x2F;javaee&#x2F;web-app_2_5.xsd&quot;</span><br><span class="line">	id&#x3D;&quot;scplatform&quot; version&#x3D;&quot;2.5&quot;&gt;</span><br><span class="line">	</span><br><span class="line">	&lt;display-name&gt;&#x2F;&lt;&#x2F;display-name&gt;</span><br><span class="line">	</span><br><span class="line">	&lt;error-page&gt;</span><br><span class="line">	   &lt;error-code&gt;404&lt;&#x2F;error-code&gt;</span><br><span class="line">	   &lt;location&gt;&#x2F;index.html&lt;&#x2F;location&gt;</span><br><span class="line">	&lt;&#x2F;error-page&gt;</span><br><span class="line">	</span><br><span class="line">&lt;&#x2F;web-app&gt;</span><br><span class="line"></span><br><span class="line">在webpack.prod.conf.js 中修改</span><br><span class="line">new CopyWebpackPlugin([</span><br><span class="line">  &#123;</span><br><span class="line">    from: path.resolve(__dirname, &#39;..&#x2F;static&#39;),</span><br><span class="line">    to: config.build.assetsSubDirectory,</span><br><span class="line">    ignore: [&#39;.*&#39;]</span><br><span class="line">  &#125;,</span><br><span class="line">  &#123;</span><br><span class="line">    from: path.resolve(__dirname, &#39;..&#x2F;WEB-INF&#39;),</span><br><span class="line">    to: &#39;WEB-INF&#39;,</span><br><span class="line">    ignore: [&#39;.*&#39;]</span><br><span class="line">  &#125;</span><br><span class="line">])</span><br></pre></td></tr></table></figure>
 
       
     </div>
@@ -1003,7 +1175,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">16</span>
+          <span class="site-state-item-count">15</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>

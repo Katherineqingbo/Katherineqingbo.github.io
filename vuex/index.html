@@ -20,16 +20,21 @@
     var CONFIG = {"hostname":"katherineqingbo.github.io","root":"/","scheme":"Gemini","version":"7.7.2","exturl":false,"sidebar":{"position":"left","Pisces | Gemini":240,"display":"always","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.json"};
   </script>
 
-  <meta property="og:type" content="article">
+  <meta name="description" content="Vuex 是一个专为 Vue.js 应用程序开发的状态管理模式，可以帮助我们管理共享状态。在具有VueX的Vue项目中，我们只需要把这些值定义在VueX中，即可在整个Vue项目的组件中使用。 在Vue项目开发中，需要监控项目中得各种值，为了提高效率，Vue提供了一款浏览器扩展——VueDevtools。 使用初始化store下index.js中的内容123456789101112131415im">
+<meta property="og:type" content="article">
 <meta property="og:title" content="vuex">
 <meta property="og:url" content="https://katherineqingbo.github.io/vuex/index.html">
 <meta property="og:site_name" content="前端">
+<meta property="og:description" content="Vuex 是一个专为 Vue.js 应用程序开发的状态管理模式，可以帮助我们管理共享状态。在具有VueX的Vue项目中，我们只需要把这些值定义在VueX中，即可在整个Vue项目的组件中使用。 在Vue项目开发中，需要监控项目中得各种值，为了提高效率，Vue提供了一款浏览器扩展——VueDevtools。 使用初始化store下index.js中的内容123456789101112131415im">
 <meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://katherineqingbo.github.io/images/vuex.png">
+<meta property="og:image" content="https://katherineqingbo.github.io/images/store.png">
 <meta property="article:published_time" content="2020-05-11T02:57:28.000Z">
-<meta property="article:modified_time" content="2020-05-11T02:57:42.745Z">
+<meta property="article:modified_time" content="2020-05-11T10:54:58.028Z">
 <meta property="article:author" content="青波">
 <meta property="article:tag" content="vue">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://katherineqingbo.github.io/images/vuex.png">
 
 <link rel="canonical" href="https://katherineqingbo.github.io/vuex/">
 
@@ -219,7 +224,7 @@
               <span class="post-meta-item-text">发表于</span>
               
 
-              <time title="创建时间：2020-05-11 10:57:28 / 修改时间：10:57:42" itemprop="dateCreated datePublished" datetime="2020-05-11T10:57:28+08:00">2020-05-11</time>
+              <time title="创建时间：2020-05-11 10:57:28 / 修改时间：18:54:58" itemprop="dateCreated datePublished" datetime="2020-05-11T10:57:28+08:00">2020-05-11</time>
             </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -242,7 +247,98 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        
+        <a id="more"></a>
+<p>Vuex 是一个专为 Vue.js 应用程序开发的<code>状态管理模式</code>，可以帮助我们管理共享状态。在具有VueX的Vue项目中，我们只需要把这些值定义在VueX中，即可在整个Vue项目的组件中使用。</p>
+<p>在Vue项目开发中，需要监控项目中得各种值，为了提高效率，Vue提供了一款浏览器扩展——<code>VueDevtools</code>。</p>
+<h2 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h2><h3 id="初始化store下index-js中的内容"><a href="#初始化store下index-js中的内容" class="headerlink" title="初始化store下index.js中的内容"></a>初始化<code>store</code>下<code>index.js</code>中的内容</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">import Vue from &#39;vue&#39;</span><br><span class="line">import Vuex from &#39;vuex&#39;</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F;挂载Vuex</span><br><span class="line">Vue.use(Vuex)</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F;创建VueX对象</span><br><span class="line">const store &#x3D; new Vuex.Store(&#123;</span><br><span class="line">    state:&#123;</span><br><span class="line">        &#x2F;&#x2F;存放的键值对就是所要管理的状态</span><br><span class="line">        name:&#39;helloVueX&#39;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line">export default store</span><br></pre></td></tr></table></figure>
+<h3 id="将store挂载到当前项目的Vue实例当中去"><a href="#将store挂载到当前项目的Vue实例当中去" class="headerlink" title="将store挂载到当前项目的Vue实例当中去"></a>将store挂载到当前项目的Vue实例当中去</h3><p>打开main.js</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">import Vue from &#39;vue&#39;</span><br><span class="line">import App from &#39;.&#x2F;App&#39;</span><br><span class="line">import router from &#39;.&#x2F;router&#39;</span><br><span class="line">import store from &#39;.&#x2F;store&#39;</span><br><span class="line"></span><br><span class="line">Vue.config.productionTip &#x3D; false</span><br><span class="line"></span><br><span class="line">&#x2F;* eslint-disable no-new *&#x2F;</span><br><span class="line">new Vue(&#123;</span><br><span class="line">  el: &#39;#app&#39;,</span><br><span class="line">  router,</span><br><span class="line">  store,  &#x2F;&#x2F;store:store 和router一样，将我们创建的Vuex实例挂载到这个vue实例中</span><br><span class="line">  render: h &#x3D;&gt; h(App)</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<h3 id="在组件中使用Vuex"><a href="#在组件中使用Vuex" class="headerlink" title="在组件中使用Vuex"></a>在组件中使用Vuex</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&lt;template&gt;</span><br><span class="line">    &lt;div id&#x3D;&#39;app&#39;&gt;</span><br><span class="line">        name:</span><br><span class="line">        &lt;h1&gt;&#123;&#123; $store.state.name &#125;&#125;&lt;&#x2F;h1&gt;</span><br><span class="line">    &lt;&#x2F;div&gt;</span><br><span class="line">&lt;&#x2F;template&gt;</span><br></pre></td></tr></table></figure>
+<p>或者要在组件方法中使用</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">...,</span><br><span class="line">methods:&#123;</span><br><span class="line">    add()&#123;</span><br><span class="line">      console.log(this.$store.state.name)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;,</span><br><span class="line">...</span><br></pre></td></tr></table></figure>
+<h2 id="VueX中的核心内容"><a href="#VueX中的核心内容" class="headerlink" title="VueX中的核心内容"></a>VueX中的核心内容</h2><p>在VueX对象中，其实不止有state,还有用来操作state中数据的方法集，以及当我们需要对state中的数据需要加工的方法集等等成员。</p>
+<p><strong>成员列表：</strong></p>
+<ul>
+<li>state 存放状态</li>
+<li>mutations state成员操作</li>
+<li>getters 加工state成员给外界</li>
+<li>actions 异步操作</li>
+<li>modules 模块化状态管理</li>
+</ul>
+<h3 id="VueX的工作流程"><a href="#VueX的工作流程" class="headerlink" title="VueX的工作流程"></a>VueX的工作流程</h3><p>首先，Vue组件如果调用某个VueX的方法过程中需要向后端请求时或者说出现异步操作时，需要<code>dispatch VueX</code>中<code>actions</code>的方法，以保证数据的同步。可以说，<code>action</code>的存在就是为了让<code>mutations</code>中的方法能在异步操作中起作用。</p>
+<p>如果没有异步操作，那么我们就可以直接在组件内提交状态中的<code>Mutations</code>中自己编写的方法来达成对<code>state</code>成员的操作。不建议在组件中直接对state中的成员进行操作，这是因为直接修改(例如：this.$store.state.name = ‘hello’)的话不能被VueDevtools所监控到。</p>
+<p>最后被修改后的state成员会被渲染到组件的原位置当中去。</p>
+<p><img src="/images/vuex.png" alt="alt"></p>
+<h3 id="Mutations"><a href="#Mutations" class="headerlink" title="Mutations"></a>Mutations</h3><p>mutations是操作state数据的方法的集合，比如对该数据的修改、增加、删除等等。<br>mutations方法都有默认的形参：(<code>[state] [,payload]</code>)</p>
+<ul>
+<li>state是当前VueX对象中的state</li>
+<li>payload是该方法在被调用时传递参数使用的<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">&lt;!-- index.js --&gt;</span><br><span class="line">import Vue from &#39;vue&#39;</span><br><span class="line">import Vuex from &#39;vuex&#39;</span><br><span class="line"></span><br><span class="line">Vue.use(Vuex)</span><br><span class="line"></span><br><span class="line">const store &#x3D; new Vuex(&#123;</span><br><span class="line">    state:&#123;</span><br><span class="line">        name:&#39;helloVueX&#39;</span><br><span class="line">    &#125;,</span><br><span class="line">    mutations:&#123;</span><br><span class="line">        &#x2F;&#x2F;es6语法，等同edit:funcion()&#123;...&#125;</span><br><span class="line">        edit(state)&#123;</span><br><span class="line">            state.name &#x3D; &#39;jack&#39;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line">export default store</span><br></pre></td></tr></table></figure>
+而在组件中，我们需要这样去调用这个mutation——例如在App.vue的某个method中:<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">this.$store.commit(&#39;edit&#39;)</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<h3 id="Mutation传值"><a href="#Mutation传值" class="headerlink" title="Mutation传值"></a>Mutation传值</h3><p>在实际生产过程中，会遇到需要在提交某个mutation时需要携带一些参数给方法使用。<br>单个值提交时:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">this.$store.commit(&#39;edit&#39;,15)</span><br></pre></td></tr></table></figure>
+<p>当需要多参提交时，推荐把他们放在一个对象中来提交:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">this.$store.commit(&#39;edit&#39;,&#123;age:15,sex:&#39;男&#39;&#125;)</span><br></pre></td></tr></table></figure>
+<p>接收挂载的参数：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">edit(state,payload)&#123;</span><br><span class="line">  state.name &#x3D; &#39;jack&#39;</span><br><span class="line">  console.log(payload) &#x2F;&#x2F; 15或&#123;age:15,sex:&#39;男&#39;&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>另一种提交方式</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">this.$store.commit(&#123;</span><br><span class="line">    type:&#39;edit&#39;,</span><br><span class="line">    payload:&#123;</span><br><span class="line">        age:15,</span><br><span class="line">        sex:&#39;男&#39;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<h3 id="增删state中的成员"><a href="#增删state中的成员" class="headerlink" title="增删state中的成员"></a>增删state中的成员</h3><p>为了配合Vue的响应式数据，我们在Mutations的方法中，应当使用Vue提供的方法来进行操作。<br>如果使用delete或者xx.xx = xx的形式去删或增，则Vue不能对数据进行实时响应。</p>
+<ul>
+<li>Vue.set 为某个对象设置成员的值，若不存在则新增</li>
+</ul>
+<p>例如对state对象中添加一个age成员</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Vue.set(state,&quot;age&quot;,15)</span><br></pre></td></tr></table></figure>
+<ul>
+<li>Vue.delete 删除成员</li>
+</ul>
+<p>将刚刚添加的age成员删除</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Vue.delete(state,&#39;age&#39;)</span><br></pre></td></tr></table></figure>
+<h3 id="Actions"><a href="#Actions" class="headerlink" title="Actions"></a>Actions</h3><p>由于直接在mutation方法中进行异步操作，将会引起数据失效。所以提供了Actions来专门进行异步操作，最终提交mutation方法。</p>
+<p><strong>Actions中的方法有两个默认参数</strong></p>
+<ul>
+<li>context 上下文(相当于箭头函数中的this)对象</li>
+<li>payload 挂载参数</li>
+</ul>
+<p>由于<code>setTimeout</code>是异步操作，所以需要使用<code>actions</code></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">actions:&#123;</span><br><span class="line">    aEdit(context,payload)&#123;</span><br><span class="line">        setTimeout(()&#x3D;&gt;&#123;</span><br><span class="line">            context.commit(&#39;edit&#39;,payload)</span><br><span class="line">        &#125;,2000)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>在组件中调用:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">this.$store.dispatch(&#39;aEdit&#39;,&#123;age:15&#125;)</span><br></pre></td></tr></table></figure>
+<h3 id="Getters"><a href="#Getters" class="headerlink" title="Getters"></a>Getters</h3><p>可以对state中的成员加工后传递给外界</p>
+<p><strong>Getters中的方法有两个默认参数</strong></p>
+<ul>
+<li>state 当前VueX对象中的状态对象</li>
+<li>getters 当前getters对象，用于将getters下的其他getter拿来用<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">getters:&#123;</span><br><span class="line">    nameInfo(state)&#123;</span><br><span class="line">        return &quot;姓名:&quot;+state.name</span><br><span class="line">    &#125;,</span><br><span class="line">    fullInfo(state,getters)&#123;</span><br><span class="line">        return getters.nameInfo+&#39;年龄:&#39;+state.age</span><br><span class="line">    &#125;  </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+或者<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">const getters &#x3D; &#123;</span><br><span class="line">  loading: state &#x3D;&gt; state.user.loading,</span><br><span class="line">  token: state &#x3D;&gt; state.user.token,</span><br><span class="line">&#125;</span><br><span class="line">export default getters</span><br></pre></td></tr></table></figure>
+组件中调用<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">this.$store.getters.fullInfo</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<h3 id="Models"><a href="#Models" class="headerlink" title="Models"></a>Models</h3><p>当项目庞大，状态非常多时，可以采用模块化管理模式。Vuex 允许我们将 store 分割成模块（module）。每个模块拥有自己的 <code>state、mutation、action、getter、</code>甚至是嵌套子模块——从上至下进行同样方式的分割。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">models:&#123;</span><br><span class="line">    a:&#123;</span><br><span class="line">        state:&#123;&#125;,</span><br><span class="line">        getters:&#123;&#125;,</span><br><span class="line">        ....</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>组件内调用模块a的状态：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">this.$store.state.a</span><br></pre></td></tr></table></figure>
+<p>而提交或者<code>dispatch</code>某个方法和以前一样,会自动执行所有模块内的对应<code>type</code>的方法：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">this.$store.commit(&#39;editKey&#39;)</span><br><span class="line">this.$store.dispatch(&#39;aEditKey&#39;)</span><br></pre></td></tr></table></figure>
+<h3 id="模块的细节"><a href="#模块的细节" class="headerlink" title="模块的细节"></a>模块的细节</h3><ul>
+<li>模块中<code>mutations</code>和<code>getters</code>中的方法接受的第一个参数是自身局部模块内部的<code>state</code><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">models:&#123;</span><br><span class="line">    a:&#123;</span><br><span class="line">        state:&#123;key:5&#125;,</span><br><span class="line">        mutations:&#123;</span><br><span class="line">            editKey(state)&#123;</span><br><span class="line">                state.key &#x3D; 9</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;,</span><br><span class="line">        ....</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+<li><code>getters</code>中方法的第三个参数是根节点状态<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">models:&#123;</span><br><span class="line">    a:&#123;</span><br><span class="line">        state:&#123;key:5&#125;,</span><br><span class="line">        getters:&#123;</span><br><span class="line">            getKeyCount(state,getter,rootState)&#123;</span><br><span class="line">                return  rootState.key + state.key</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;,</span><br><span class="line">        ....</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+<li><code>actions</code>中方法获取局部模块状态是<code>context.state</code>,根节点状态是<code>context.rootState</code><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">models:&#123;</span><br><span class="line">    a:&#123;</span><br><span class="line">        state:&#123;key:5&#125;,</span><br><span class="line">        actions:&#123;</span><br><span class="line">            aEidtKey(context)&#123;</span><br><span class="line">                if(context.state.key &#x3D;&#x3D;&#x3D; context.rootState.key)&#123;</span><br><span class="line">                    context.commit(&#39;editKey&#39;)</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;,</span><br><span class="line">        ....</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<h2 id="store目录结构"><a href="#store目录结构" class="headerlink" title="store目录结构"></a>store目录结构</h2><p><img src="/images/store.png" alt="alt"></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">&lt;!-- index.js --&gt;</span><br><span class="line">import Vue from &#39;vue&#39;</span><br><span class="line">import Vuex from &#39;vuex&#39;</span><br><span class="line">import getters from &#39;.&#x2F;getters&#39;</span><br><span class="line"></span><br><span class="line">import user from &#39;.&#x2F;modules&#x2F;user&#39;</span><br><span class="line">import aside from &#39;.&#x2F;modules&#x2F;aside&#39;</span><br><span class="line">import homeTemp from &#39;.&#x2F;modules&#x2F;homeTemp&#39;</span><br><span class="line">import homeNormal from &#39;.&#x2F;modules&#x2F;homeNormal&#39;</span><br><span class="line">import homePage from &#39;.&#x2F;modules&#x2F;homePage&#39;</span><br><span class="line">Vue.use(Vuex)</span><br><span class="line"></span><br><span class="line">const store &#x3D; new Vuex.Store(&#123;</span><br><span class="line">  getters,</span><br><span class="line">  modules: &#123;</span><br><span class="line">    user,</span><br><span class="line">    aside,</span><br><span class="line">    homeTemp,</span><br><span class="line">    homeNormal,</span><br><span class="line">    homePage</span><br><span class="line">  &#125;</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line">export default store</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&lt;!-- getters.js --&gt;</span><br><span class="line">const getters &#x3D; &#123;</span><br><span class="line">  loading: state &#x3D;&gt; state.user.loading,</span><br><span class="line">  token: state &#x3D;&gt; state.user.token,</span><br><span class="line">  dialogMask: state &#x3D;&gt; state.homeTemp.dialogMask,</span><br><span class="line">&#125;</span><br><span class="line">export default getters</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">&lt;!-- dialogMask.js --&gt;</span><br><span class="line">const dialogMask &#x3D; &#123;</span><br><span class="line">  state: &#123;</span><br><span class="line">    dialogMask: false</span><br><span class="line">  &#125;,</span><br><span class="line">  mutations: &#123;</span><br><span class="line">    SET_MASKDIALOG: (state, dialogMask) &#x3D;&gt; &#123;</span><br><span class="line">      state.dialogMask &#x3D; dialogMask</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;,</span><br><span class="line">  actions: &#123;</span><br><span class="line">    maskDialog (&#123; commit &#125;, params) &#123;</span><br><span class="line">      commit(&#39;SET_MASKDIALOG&#39;, params)</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">export default dialogMask</span><br></pre></td></tr></table></figure>
+<p>组件内调用某个模块的状态</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">this.$store.getters.dialogMask</span><br></pre></td></tr></table></figure>
+<p>组件内某个模块更改状态</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">this.$store.dispatch(&#39;dialogMask&#39;, true)</span><br></pre></td></tr></table></figure>
+<p>或者</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">let params &#x3D; &#123;&#39;accountNo&#39;: this.loginForm.username, &#39;password&#39;: md5(this.loginForm.password)&#125;</span><br><span class="line">this.$store.dispatch(&#39;Login&#39;, params).then((res) &#x3D;&gt; &#123;</span><br><span class="line">  console.log(res)</span><br><span class="line">  localStorage.setItem(&#39;orgIds&#39;, res.data.data.orgId)</span><br><span class="line">  this.$router.push(&#123; path: &#39;&#x2F;&#39; &#125;)</span><br><span class="line">&#125;).catch((err) &#x3D;&gt; &#123;</span><br><span class="line">  console.log(err)</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
     </div>
 
     
@@ -264,8 +360,8 @@
       <i class="fa fa-chevron-left"></i> promise
     </a></div>
       <div class="post-nav-item">
-    <a href="/%E7%88%B6%E5%AD%90%E7%BB%84%E4%BB%B6%E4%BC%A0%E5%8F%82/" rel="next" title="父子组件传参">
-      父子组件传参 <i class="fa fa-chevron-right"></i>
+    <a href="/%E7%88%B6%E5%AD%90%E7%BB%84%E4%BB%B6%E4%BC%A0%E5%80%BC/" rel="next" title="父子组件传值">
+      父子组件传值 <i class="fa fa-chevron-right"></i>
     </a></div>
     </div>
       </footer>
@@ -326,6 +422,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#使用"><span class="nav-number">1.</span> <span class="nav-text">使用</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#初始化store下index-js中的内容"><span class="nav-number">1.1.</span> <span class="nav-text">初始化store下index.js中的内容</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#将store挂载到当前项目的Vue实例当中去"><span class="nav-number">1.2.</span> <span class="nav-text">将store挂载到当前项目的Vue实例当中去</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#在组件中使用Vuex"><span class="nav-number">1.3.</span> <span class="nav-text">在组件中使用Vuex</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#VueX中的核心内容"><span class="nav-number">2.</span> <span class="nav-text">VueX中的核心内容</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#VueX的工作流程"><span class="nav-number">2.1.</span> <span class="nav-text">VueX的工作流程</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Mutations"><span class="nav-number">2.2.</span> <span class="nav-text">Mutations</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Mutation传值"><span class="nav-number">2.3.</span> <span class="nav-text">Mutation传值</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#增删state中的成员"><span class="nav-number">2.4.</span> <span class="nav-text">增删state中的成员</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Actions"><span class="nav-number">2.5.</span> <span class="nav-text">Actions</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Getters"><span class="nav-number">2.6.</span> <span class="nav-text">Getters</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Models"><span class="nav-number">2.7.</span> <span class="nav-text">Models</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#模块的细节"><span class="nav-number">2.8.</span> <span class="nav-text">模块的细节</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#store目录结构"><span class="nav-number">3.</span> <span class="nav-text">store目录结构</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -341,7 +438,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">16</span>
+          <span class="site-state-item-count">15</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
