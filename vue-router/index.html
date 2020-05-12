@@ -20,12 +20,12 @@
     var CONFIG = {"hostname":"katherineqingbo.github.io","root":"/","scheme":"Gemini","version":"7.7.2","exturl":false,"sidebar":{"position":"left","Pisces | Gemini":240,"display":"always","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.json"};
   </script>
 
-  <meta name="description" content="路由传参定义vue-router的动态路由   声明式 编程式    &lt;router-link :to&#x3D;&quot;...&quot;&gt; router.push(...)   路由中设置多段路径参数，对应的值都会设置到 $route.params 中。例如：    模式 匹配路径 $route.params    &#x2F;user&#x2F;:username &#x2F;user&#x2F;evan { userna">
+  <meta name="description" content="路由传参定义vue-router的动态路由   声明式 编程式    &lt;router-link :to&#x3D;&quot;...&quot;&gt; router.push(...)   路由中设置多段路径参数，对应的值都会设置到 $route.params 中。例如：    模式 匹配路径 $route.params    &#x2F;user&#x2F;:username &#x2F;user&#x2F;evan { usernam">
 <meta property="og:type" content="article">
 <meta property="og:title" content="vue-router">
 <meta property="og:url" content="https://katherineqingbo.github.io/vue-router/index.html">
 <meta property="og:site_name" content="前端">
-<meta property="og:description" content="路由传参定义vue-router的动态路由   声明式 编程式    &lt;router-link :to&#x3D;&quot;...&quot;&gt; router.push(...)   路由中设置多段路径参数，对应的值都会设置到 $route.params 中。例如：    模式 匹配路径 $route.params    &#x2F;user&#x2F;:username &#x2F;user&#x2F;evan { userna">
+<meta property="og:description" content="路由传参定义vue-router的动态路由   声明式 编程式    &lt;router-link :to&#x3D;&quot;...&quot;&gt; router.push(...)   路由中设置多段路径参数，对应的值都会设置到 $route.params 中。例如：    模式 匹配路径 $route.params    &#x2F;user&#x2F;:username &#x2F;user&#x2F;evan { usernam">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://katherineqingbo.github.io/images/ensure.png">
 <meta property="og:image" content="https://katherineqingbo.github.io/images/import.png">
@@ -33,7 +33,7 @@
 <meta property="og:image" content="https://katherineqingbo.github.io/images/route.png">
 <meta property="og:image" content="https://katherineqingbo.github.io/images/router.png">
 <meta property="article:published_time" content="2020-05-11T02:53:46.000Z">
-<meta property="article:modified_time" content="2020-05-11T07:22:02.050Z">
+<meta property="article:modified_time" content="2020-05-11T11:14:12.111Z">
 <meta property="article:author" content="青波">
 <meta property="article:tag" content="vue">
 <meta name="twitter:card" content="summary">
@@ -227,7 +227,7 @@
               <span class="post-meta-item-text">发表于</span>
               
 
-              <time title="创建时间：2020-05-11 10:53:46 / 修改时间：15:22:02" itemprop="dateCreated datePublished" datetime="2020-05-11T10:53:46+08:00">2020-05-11</time>
+              <time title="创建时间：2020-05-11 10:53:46 / 修改时间：19:14:12" itemprop="dateCreated datePublished" datetime="2020-05-11T10:53:46+08:00">2020-05-11</time>
             </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -250,8 +250,7 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <a id="more"></a>
-<h2 id="路由传参"><a href="#路由传参" class="headerlink" title="路由传参"></a>路由传参</h2><h3 id="定义vue-router的动态路由"><a href="#定义vue-router的动态路由" class="headerlink" title="定义vue-router的动态路由"></a>定义vue-router的动态路由</h3><table>
+        <h2 id="路由传参"><a href="#路由传参" class="headerlink" title="路由传参"></a>路由传参</h2><h3 id="定义vue-router的动态路由"><a href="#定义vue-router的动态路由" class="headerlink" title="定义vue-router的动态路由"></a>定义vue-router的动态路由</h3><table>
 <thead>
 <tr>
 <th>声明式</th>
@@ -283,6 +282,9 @@
 <td>{ username: ‘evan’, post_id: ‘123’ }</td>
 </tr>
 </tbody></table>
+<a id="more"></a>
+
+
 <p>携带参数的路由实现方式</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;&#x2F; 对象</span><br><span class="line">router.push(&#123; name: &#39;home&#39; &#125;)</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F; 带查询参数，变成 &#x2F;register?plan&#x3D;private</span><br><span class="line">router.push(&#123; path: &#39;register&#39;, query: &#123; plan: &#39;private&#39; &#125;&#125;)</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F; -&gt; &#x2F;user&#x2F;123</span><br><span class="line">router.push(&#123; path: &#96;&#x2F;user&#x2F;$&#123;userId&#125;&#96; &#125;) </span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F; -&gt; &#x2F;user&#x2F;123</span><br><span class="line">router.push(&#123; name: &#39;user&#39;, params: &#123; userId &#125;&#125;)</span><br></pre></td></tr></table></figure>
 <p>注意：如果提供了 <code>path，params</code> 会被忽略，上述例子中的 <code>query</code> 并不属于这种情况。</p>
@@ -400,7 +402,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">15</span>
+          <span class="site-state-item-count">16</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
