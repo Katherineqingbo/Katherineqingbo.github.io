@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://katherineqingbo.github.io/"/>
-  <updated>2020-05-12T02:50:17.445Z</updated>
+  <updated>2020-05-12T03:53:52.376Z</updated>
   <id>https://katherineqingbo.github.io/</id>
   
   <author>
@@ -15,6 +15,33 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Object的方法</title>
+    <link href="https://katherineqingbo.github.io/Object%E7%9A%84%E6%96%B9%E6%B3%95/"/>
+    <id>https://katherineqingbo.github.io/Object%E7%9A%84%E6%96%B9%E6%B3%95/</id>
+    <published>2020-05-12T03:17:07.000Z</published>
+    <updated>2020-05-12T03:53:52.376Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h2 id=&quot;定义属性&quot;&gt;&lt;a href=&quot;#定义属性&quot; class=&quot;headerlink&quot; title=&quot;定义属性&quot;&gt;&lt;/a&gt;定义属性&lt;/h2&gt;&lt;p&gt;定义一个对象，必须明确属性名和对应的值，即使属性名和声明的变量名一样（var a =
+        
+      
+    
+    </summary>
+    
+    
+      <category term="ES6" scheme="https://katherineqingbo.github.io/categories/ES6/"/>
+    
+    
+      <category term="ES6" scheme="https://katherineqingbo.github.io/tags/ES6/"/>
+    
+  </entry>
   
   <entry>
     <title>Array方法</title>
