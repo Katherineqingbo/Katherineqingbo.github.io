@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://katherineqingbo.github.io/"/>
-  <updated>2020-05-12T03:53:52.376Z</updated>
+  <updated>2020-05-18T11:23:42.191Z</updated>
   <id>https://katherineqingbo.github.io/</id>
   
   <author>
@@ -17,21 +17,39 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>vue常用的基础指令</title>
+    <link href="https://katherineqingbo.github.io/vue%E5%B8%B8%E7%94%A8%E7%9A%84%E5%9F%BA%E7%A1%80%E6%8C%87%E4%BB%A4/"/>
+    <id>https://katherineqingbo.github.io/vue%E5%B8%B8%E7%94%A8%E7%9A%84%E5%9F%BA%E7%A1%80%E6%8C%87%E4%BB%A4/</id>
+    <published>2020-05-18T10:49:23.000Z</published>
+    <updated>2020-05-18T11:23:42.191Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;Vue的基本指令&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="vue" scheme="https://katherineqingbo.github.io/categories/vue/"/>
+    
+    
+      <category term="vue" scheme="https://katherineqingbo.github.io/tags/vue/"/>
+    
+  </entry>
+  
+  <entry>
     <title>Object的方法</title>
     <link href="https://katherineqingbo.github.io/Object%E7%9A%84%E6%96%B9%E6%B3%95/"/>
     <id>https://katherineqingbo.github.io/Object%E7%9A%84%E6%96%B9%E6%B3%95/</id>
     <published>2020-05-12T03:17:07.000Z</published>
-    <updated>2020-05-12T03:53:52.376Z</updated>
+    <updated>2020-05-12T04:04:09.301Z</updated>
     
     <summary type="html">
     
-      
-      
-        
-        
-          &lt;h2 id=&quot;定义属性&quot;&gt;&lt;a href=&quot;#定义属性&quot; class=&quot;headerlink&quot; title=&quot;定义属性&quot;&gt;&lt;/a&gt;定义属性&lt;/h2&gt;&lt;p&gt;定义一个对象，必须明确属性名和对应的值，即使属性名和声明的变量名一样（var a =
-        
-      
+      &lt;h2 id=&quot;定义属性&quot;&gt;&lt;a href=&quot;#定义属性&quot; class=&quot;headerlink&quot; title=&quot;定义属性&quot;&gt;&lt;/a&gt;定义属性&lt;/h2&gt;&lt;p&gt;定义一个对象，必须明确属性名和对应的值，即使属性名和声明的变量名一样（var a = {obj：obj}），ES6及后续版本允许我们用短的代码声明对象，用于将对象的属性分配给与属性同名的变量&lt;/p&gt;
+&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;var x &amp;#x3D; 1, y &amp;#x3D; 2;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;var object &amp;#x3D; &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt; x: x,&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt; y: y &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;console.log(object.x); &amp;#x2F;&amp;#x2F;output 1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;但是ES6之后，你可以这么做&lt;/p&gt;
+&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;let x &amp;#x3D; 1, y &amp;#x3D; 2;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;let object &amp;#x3D; &amp;#123; x, y &amp;#125;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;console.log(object);    &amp;#x2F;&amp;#x2F; &amp;#123;x: 1, y: 2&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;console.log(object.x);  &amp;#x2F;&amp;#x2F; &amp;#x2F;&amp;#x2F;output 1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
     
     </summary>
     
@@ -48,17 +66,11 @@
     <link href="https://katherineqingbo.github.io/Array%E6%96%B9%E6%B3%95/"/>
     <id>https://katherineqingbo.github.io/Array%E6%96%B9%E6%B3%95/</id>
     <published>2020-05-11T11:16:32.000Z</published>
-    <updated>2020-05-12T02:50:17.445Z</updated>
+    <updated>2020-05-12T04:04:09.308Z</updated>
     
     <summary type="html">
     
-      
-      
-        
-        
-          &lt;h2 id=&quot;forEach&quot;&gt;&lt;a href=&quot;#forEach&quot; class=&quot;headerlink&quot; title=&quot;forEach&quot;&gt;&lt;/a&gt;forEach&lt;/h2&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td
-        
-      
+      &lt;h2 id=&quot;forEach&quot;&gt;&lt;a href=&quot;#forEach&quot; class=&quot;headerlink&quot; title=&quot;forEach&quot;&gt;&lt;/a&gt;forEach&lt;/h2&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;通过下标取值,forEach是数组的方法不能break，continue，&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;let arr &amp;#x3D; [&amp;#39;a&amp;#39;,&amp;#39;b&amp;#39;,&amp;#39;c&amp;#39;];&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;let forEachRetrun &amp;#x3D; arr.forEach(function (item,index)&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	console.log(item,index);	&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;);&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
     
     </summary>
     
@@ -75,21 +87,19 @@
     <link href="https://katherineqingbo.github.io/vue%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F/"/>
     <id>https://katherineqingbo.github.io/vue%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F/</id>
     <published>2020-05-11T03:07:19.000Z</published>
-    <updated>2020-05-11T11:01:48.775Z</updated>
+    <updated>2020-05-18T10:43:07.537Z</updated>
     
     <summary type="html">
     
-      
-      
-        
-        
-          &lt;a
-        
-      
+      &lt;p&gt;每个Vue实例在被创建之前都要经过一系列的初始化过程 &lt;strong&gt;（创建、挂载、更新、销毁）&lt;/strong&gt; ,这个过程就是vue的生命周期。&lt;/p&gt;
     
     </summary>
     
     
+      <category term="vue" scheme="https://katherineqingbo.github.io/categories/vue/"/>
+    
+    
+      <category term="vue" scheme="https://katherineqingbo.github.io/tags/vue/"/>
     
   </entry>
   
