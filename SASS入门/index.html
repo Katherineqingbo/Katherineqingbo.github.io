@@ -20,15 +20,17 @@
     var CONFIG = {"hostname":"katherineqingbo.github.io","root":"/","scheme":"Gemini","version":"7.7.2","exturl":false,"sidebar":{"position":"left","Pisces | Gemini":240,"display":"always","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.json"};
   </script>
 
-  <meta property="og:type" content="article">
+  <meta name="description" content="快速入门sass让人们受益的一个重要特性就是它为css引入了变量。你可以把反复使用的css属性值 定义成变量，然后通过变量名来引用它们，而无需重复书写这一属性值。sass使用$符号来标识变量，比如$highlight-color和$sidebar-width。">
+<meta property="og:type" content="article">
 <meta property="og:title" content="SASS入门">
 <meta property="og:url" content="https://katherineqingbo.github.io/SASS%E5%85%A5%E9%97%A8/index.html">
 <meta property="og:site_name" content="前端">
+<meta property="og:description" content="快速入门sass让人们受益的一个重要特性就是它为css引入了变量。你可以把反复使用的css属性值 定义成变量，然后通过变量名来引用它们，而无需重复书写这一属性值。sass使用$符号来标识变量，比如$highlight-color和$sidebar-width。">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2020-05-11T03:02:04.000Z">
-<meta property="article:modified_time" content="2020-05-11T11:01:48.774Z">
+<meta property="article:modified_time" content="2020-05-20T11:12:00.920Z">
 <meta property="article:author" content="青波">
-<meta property="article:tag" content="vue">
+<meta property="article:tag" content="vue,css">
 <meta name="twitter:card" content="summary">
 
 <link rel="canonical" href="https://katherineqingbo.github.io/SASS%E5%85%A5%E9%97%A8/">
@@ -217,10 +219,16 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
-              
 
-              <time title="创建时间：2020-05-11 11:02:04 / 修改时间：19:01:48" itemprop="dateCreated datePublished" datetime="2020-05-11T11:02:04+08:00">2020-05-11</time>
+              <time title="创建时间：2020-05-11 11:02:04" itemprop="dateCreated datePublished" datetime="2020-05-11T11:02:04+08:00">2020-05-11</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-05-20 19:12:00" itemprop="dateModified" datetime="2020-05-20T19:12:00+08:00">2020-05-20</time>
+              </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="fa fa-folder-o"></i>
@@ -228,6 +236,10 @@
               <span class="post-meta-item-text">分类于</span>
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
                   <a href="/categories/vue/" itemprop="url" rel="index"><span itemprop="name">vue</span></a>
+                </span>
+                  ，
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/vue/css/" itemprop="url" rel="index"><span itemprop="name">css</span></a>
                 </span>
             </span>
 
@@ -242,9 +254,64 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <a id="more"></a>
+        <h2 id="快速入门"><a href="#快速入门" class="headerlink" title="快速入门"></a>快速入门</h2><p>sass让人们受益的一个重要特性就是它为css引入了变量。你可以把反复使用的css属性值 定义成变量，然后通过变量名来引用它们，而无需重复书写这一属性值。<br>sass使用$符号来标识变量，比如$highlight-color和$sidebar-width。</p>
+<a id="more"></a>
 
 
+<h2 id="vue项目中手动安装"><a href="#vue项目中手动安装" class="headerlink" title="vue项目中手动安装"></a>vue项目中手动安装</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$npm install --save-dev node-sass</span><br><span class="line">$npm install --save-dev sass-loader</span><br></pre></td></tr></table></figure>
+
+<h2 id="使用变量"><a href="#使用变量" class="headerlink" title="使用变量"></a>使用变量</h2><h3 id="变量声明"><a href="#变量声明" class="headerlink" title="变量声明"></a>变量声明</h3><p>变量的作用域</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">$nav-color: #F90;</span><br><span class="line">$basic-border: 1px solid black;</span><br><span class="line">nav &#123;</span><br><span class="line">  $width: 100px;</span><br><span class="line">  width: $width;</span><br><span class="line">  color: $nav-color;</span><br><span class="line">  border: $basic-border;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F;编译后</span><br><span class="line"></span><br><span class="line">nav &#123;</span><br><span class="line">  width: 100px;</span><br><span class="line">  color: #F90;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="变量引用"><a href="#变量引用" class="headerlink" title="变量引用"></a>变量引用</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">$highlight-color: #F90;</span><br><span class="line">$highlight-border: 1px solid $highlight-color;</span><br><span class="line">.selected &#123;</span><br><span class="line">  border: $highlight-border;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F;编译后</span><br><span class="line"></span><br><span class="line">.selected &#123;</span><br><span class="line">  border: 1px solid #F90;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="嵌套CSS-规则"><a href="#嵌套CSS-规则" class="headerlink" title="嵌套CSS 规则"></a>嵌套CSS 规则</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">#content article h1 &#123; color: #333 &#125;</span><br><span class="line">#content article p &#123; margin-bottom: 1.4em &#125;</span><br><span class="line">#content aside &#123; background-color: #EEE &#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">#content &#123;</span><br><span class="line">  article &#123;</span><br><span class="line">    h1 &#123; color: #333 &#125;</span><br><span class="line">    p &#123; margin-bottom: 1.4em &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  aside &#123; background-color: #EEE &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="父选择器的标识符-amp"><a href="#父选择器的标识符-amp" class="headerlink" title="父选择器的标识符&amp;"></a>父选择器的标识符&amp;</h3><p>当你为链接之类的元素写：hover这种伪类时</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">article a &#123;</span><br><span class="line">  color: blue;</span><br><span class="line">  &amp;:hover &#123; color: red &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>当用户在使用IE浏览器时，你会通过JavaScript在<body>标签上添加一个ie的类名，为这种情况编写特殊的样式如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">#content aside &#123;</span><br><span class="line">  color: red;</span><br><span class="line">  body.ie &amp; &#123; color: green &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;*编译后*&#x2F;</span><br><span class="line">#content aside &#123;color: red&#125;;</span><br><span class="line">body.ie #content aside &#123; color: green &#125;</span><br></pre></td></tr></table></figure>
+<h3 id="群组选择器的嵌套"><a href="#群组选择器的嵌套" class="headerlink" title="群组选择器的嵌套"></a>群组选择器的嵌套</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">.container &#123;</span><br><span class="line">  h1, h2, h3 &#123;margin-bottom: .8em&#125;</span><br><span class="line">&#125;</span><br><span class="line">&#x2F;*编译后*&#x2F;</span><br><span class="line">.container h1, .container h2, .container h3 &#123; margin-bottom: .8em &#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">nav, aside &#123;</span><br><span class="line">  a &#123;color: blue&#125;</span><br><span class="line">&#125;</span><br><span class="line">&#x2F;*编译后*&#x2F;</span><br><span class="line">nav a, aside a &#123;color: blue&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="子组合选择器和同层组合选择器：-gt-、-和"><a href="#子组合选择器和同层组合选择器：-gt-、-和" class="headerlink" title="子组合选择器和同层组合选择器：&gt;、+和~"></a>子组合选择器和同层组合选择器：&gt;、+和~</h3><ul>
+<li><code>&gt;</code>选择器只会选择article下紧跟着的子元素中命中section选择器的元素</li>
+<li><code>+</code>用同层相邻组合选择器+选择header元素后紧跟的p元素</li>
+<li><code>~</code>用同层全体组合选择器~，选择所有跟在article后的同层article元素，不管它们之间隔了多少其他元素<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">article &#123;</span><br><span class="line">  ~ article &#123; border-top: 1px dashed #ccc &#125;</span><br><span class="line">  &gt; section &#123; background: #eee &#125;</span><br><span class="line">  dl &gt; &#123;</span><br><span class="line">    dt &#123; color: #333 &#125;</span><br><span class="line">    dd &#123; color: #555 &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  nav + &amp; &#123; margin-top: 0 &#125;</span><br><span class="line">&#125;</span><br><span class="line">&#x2F;*编译后*&#x2F;</span><br><span class="line">article ~ article &#123; border-top: 1px dashed #ccc &#125;</span><br><span class="line">article &gt; footer &#123; background: #eee &#125;</span><br><span class="line">article dl &gt; dt &#123; color: #333 &#125;</span><br><span class="line">article dl &gt; dd &#123; color: #555 &#125;</span><br><span class="line">nav + article &#123; margin-top: 0 &#125;</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<h3 id="嵌套属性"><a href="#嵌套属性" class="headerlink" title="嵌套属性"></a>嵌套属性</h3><p>在<code>sass</code>中，除了<code>CSS</code>选择器，属性也可以进行嵌套。尽管编写属性涉及的重复不像编写选择器那么糟糕，但是要反复写<code>border-style、border-width、border-color</code>以及<code>border-*</code>等也是非常烦人的。在sass中，你只需敲写一遍border：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">nav &#123;</span><br><span class="line">  border: &#123;</span><br><span class="line">  style: solid;</span><br><span class="line">  width: 1px;</span><br><span class="line">  color: #ccc;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line">&#x2F;*编译后*&#x2F;</span><br><span class="line">nav &#123;</span><br><span class="line">  border-style: solid;</span><br><span class="line">  border-width: 1px;</span><br><span class="line">  border-color: #ccc;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="导入SASS文件"><a href="#导入SASS文件" class="headerlink" title="导入SASS文件"></a>导入SASS文件</h2><p>即<code>@import</code>规则，它允许在一个css文件中导入其他css文件。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">@import &#39;src&#x2F;assets&#x2F;styles&#x2F;common&#x2F;mixin&#39;;</span><br></pre></td></tr></table></figure>
+
+<h3 id="使用SASS部分文件"><a href="#使用SASS部分文件" class="headerlink" title="使用SASS部分文件"></a>使用SASS部分文件</h3><p>当通过<code>@import</code>把<code>sass</code>样式分散到多个文件时，你通常只想生成少数几个<code>css</code>文件。那些专门为<code>@import</code>命令而编写的<code>sass</code>文件，并不需要生成对应的独立css文件，这样的sass文件称为局部文件。对此，sass有一个特殊的约定来命名这些文件。</p>
+<p>此约定即，<code>sass局部文件的文件名以下划线开头</code>。这样，sass就不会在编译时单独编译这个文件输出css，而只把这个文件用作导入。当你@import一个局部文件时，还可以不写文件的全名，即省略文件名开头的下划线。举例来说，你想导入<code>themes/_night-sky.scss</code>这个局部文件里的变量，你只需在样式表中写<code>@import &quot;themes/night-sky&quot;</code>;。</p>
+<h3 id="默认变量值"><a href="#默认变量值" class="headerlink" title="默认变量值"></a>默认变量值</h3><ul>
+<li>!default用于变量，含义是：如果这个变量被声明赋值了，那就用它声明的值，否则就用这个默认值。</li>
+<li>!default它很像css属性中!important标签的对立面<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$fancybox-width: 400px !default;</span><br><span class="line">.fancybox &#123;</span><br><span class="line">width: $fancybox-width;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+如果用户在导入你的sass局部文件之前声明了一个$fancybox-width变量，那么你的局部文件中对$fancybox-width赋值400px的操作就无效。如果用户没有做这样的声明，则$fancybox-width将默认为400px。</li>
+</ul>
+<h3 id="嵌套导入"><a href="#嵌套导入" class="headerlink" title="嵌套导入"></a>嵌套导入</h3><p>sass允许@import命令写在css规则内。这种导入方式下，局部文件会被直接插入到css规则内导入它的地方。<br>举例说明，有一个名为_blue-theme.scss的局部文件，内容如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">aside &#123;</span><br><span class="line">  background: blue;</span><br><span class="line">  color: white;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>然后把它导入到一个CSS规则内，如下所示：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">.blue-theme &#123;@import &quot;blue-theme&quot;&#125;</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F;生成的结果跟你直接在.blue-theme选择器内写_blue-theme.scss文件的内容完全一样。</span><br><span class="line"></span><br><span class="line">.blue-theme &#123;</span><br><span class="line">  aside &#123;</span><br><span class="line">    background: blue;</span><br><span class="line">    color: #fff;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="混合器"><a href="#混合器" class="headerlink" title="混合器"></a>混合器</h2><p>混合器使用@mixin标识符定义。这个标识符给一大段样式赋予一个名字，这样你就可以轻易地通过引用这个名字重用这段样式</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">@mixin rounded-corners &#123;</span><br><span class="line">  -moz-border-radius: 5px;</span><br><span class="line">  -webkit-border-radius: 5px;</span><br><span class="line">  border-radius: 5px;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>然后就可以在你的样式表中通过@include来使用这个混合器，放在你希望的任何地方。@include调用会把混合器中的所有样式提取出来放在@include被调用的地方</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">notice &#123;</span><br><span class="line">  background-color: green;</span><br><span class="line">  border: 2px solid #00aa00;</span><br><span class="line">  @include rounded-corners;</span><br><span class="line">&#125;</span><br><span class="line">&#x2F;*编译后*&#x2F;</span><br><span class="line">.notice &#123;</span><br><span class="line">  background-color: green;</span><br><span class="line">  border: 2px solid #00aa00;</span><br><span class="line">  -moz-border-radius: 5px;</span><br><span class="line">  -webkit-border-radius: 5px;</span><br><span class="line">  border-radius: 5px;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="混合器中的CSS规则"><a href="#混合器中的CSS规则" class="headerlink" title="混合器中的CSS规则"></a>混合器中的CSS规则</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">@mixin no-bullets &#123;</span><br><span class="line">  list-style: none;</span><br><span class="line">  li &#123;</span><br><span class="line">    list-style-image: none;</span><br><span class="line">    list-style-type: none;</span><br><span class="line">    margin-left: 0px;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">ul.plain &#123;</span><br><span class="line">  color: #444;</span><br><span class="line">  @include no-bullets;</span><br><span class="line">&#125;</span><br><span class="line">&#x2F;*编译后*&#x2F;</span><br><span class="line">ul.plain &#123;</span><br><span class="line">  color: #444;</span><br><span class="line">  list-style: none;</span><br><span class="line">&#125;</span><br><span class="line">ul.plain li &#123;</span><br><span class="line">  list-style-image: none;</span><br><span class="line">  list-style-type: none;</span><br><span class="line">  margin-left: 0px;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="给混合器传参"><a href="#给混合器传参" class="headerlink" title="给混合器传参"></a>给混合器传参</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">@mixin link-colors($normal, $hover, $visited) &#123;</span><br><span class="line">  color: $normal;</span><br><span class="line">  &amp;:hover &#123; color: $hover; &#125;</span><br><span class="line">  &amp;:visited &#123; color: $visited; &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>当混合器被@include时，你可以把它当作一个css函数来传参。如果你像下边这样写：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">a &#123;</span><br><span class="line">  @include link-colors(blue, red, green);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">&#x2F;*编译后*&#x2F;</span><br><span class="line"></span><br><span class="line">a &#123; color: blue; &#125;</span><br><span class="line">a:hover &#123; color: red; &#125;</span><br><span class="line">a:visited &#123; color: green; &#125;</span><br></pre></td></tr></table></figure>
+<p>sass允许通过语法$name: value的形式指定每个参数的值。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">a &#123;</span><br><span class="line">    @include link-colors(</span><br><span class="line">      $normal: blue,</span><br><span class="line">      $visited: green,</span><br><span class="line">      $hover: red</span><br><span class="line">  );</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
     </div>
 
     
@@ -253,7 +320,7 @@
 
       <footer class="post-footer">
           <div class="post-tags">
-              <a href="/tags/vue/" rel="tag"># vue</a>
+              <a href="/tags/vue-css/" rel="tag"># vue,css</a>
           </div>
 
         
@@ -328,6 +395,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#快速入门"><span class="nav-number">1.</span> <span class="nav-text">快速入门</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#vue项目中手动安装"><span class="nav-number">2.</span> <span class="nav-text">vue项目中手动安装</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#使用变量"><span class="nav-number">3.</span> <span class="nav-text">使用变量</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#变量声明"><span class="nav-number">3.1.</span> <span class="nav-text">变量声明</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#变量引用"><span class="nav-number">3.2.</span> <span class="nav-text">变量引用</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#嵌套CSS-规则"><span class="nav-number">4.</span> <span class="nav-text">嵌套CSS 规则</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#父选择器的标识符-amp"><span class="nav-number">4.1.</span> <span class="nav-text">父选择器的标识符&amp;</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#群组选择器的嵌套"><span class="nav-number">4.2.</span> <span class="nav-text">群组选择器的嵌套</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#子组合选择器和同层组合选择器：-gt-、-和"><span class="nav-number">4.3.</span> <span class="nav-text">子组合选择器和同层组合选择器：&gt;、+和~</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#嵌套属性"><span class="nav-number">4.4.</span> <span class="nav-text">嵌套属性</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#导入SASS文件"><span class="nav-number">5.</span> <span class="nav-text">导入SASS文件</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#使用SASS部分文件"><span class="nav-number">5.1.</span> <span class="nav-text">使用SASS部分文件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#默认变量值"><span class="nav-number">5.2.</span> <span class="nav-text">默认变量值</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#嵌套导入"><span class="nav-number">5.3.</span> <span class="nav-text">嵌套导入</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#混合器"><span class="nav-number">6.</span> <span class="nav-text">混合器</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#混合器中的CSS规则"><span class="nav-number">6.1.</span> <span class="nav-text">混合器中的CSS规则</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#给混合器传参"><span class="nav-number">6.2.</span> <span class="nav-text">给混合器传参</span></a></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -343,20 +411,20 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">18</span>
+          <span class="site-state-item-count">23</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
           
-        <span class="site-state-item-count">4</span>
+        <span class="site-state-item-count">6</span>
         <span class="site-state-item-name">分类</span></a>
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">4</span>
+        <span class="site-state-item-count">6</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>

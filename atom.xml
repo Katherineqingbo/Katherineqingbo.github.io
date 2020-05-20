@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://katherineqingbo.github.io/"/>
-  <updated>2020-05-19T09:20:14.186Z</updated>
+  <updated>2020-05-20T10:04:02.970Z</updated>
   <id>https://katherineqingbo.github.io/</id>
   
   <author>
@@ -15,6 +15,118 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>表单验证</title>
+    <link href="https://katherineqingbo.github.io/%E8%A1%A8%E5%8D%95%E9%AA%8C%E8%AF%81/"/>
+    <id>https://katherineqingbo.github.io/%E8%A1%A8%E5%8D%95%E9%AA%8C%E8%AF%81/</id>
+    <published>2020-05-20T07:29:54.000Z</published>
+    <updated>2020-05-20T10:04:02.970Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;element-ui中表单验证的三种方式&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="vue" scheme="https://katherineqingbo.github.io/categories/vue/"/>
+    
+      <category term="element" scheme="https://katherineqingbo.github.io/categories/vue/element/"/>
+    
+    
+      <category term="vue,element" scheme="https://katherineqingbo.github.io/tags/vue-element/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>axios安装、使用和配置</title>
+    <link href="https://katherineqingbo.github.io/axios%E5%AE%89%E8%A3%85%E3%80%81%E4%BD%BF%E7%94%A8%E5%92%8C%E9%85%8D%E7%BD%AE/"/>
+    <id>https://katherineqingbo.github.io/axios%E5%AE%89%E8%A3%85%E3%80%81%E4%BD%BF%E7%94%A8%E5%92%8C%E9%85%8D%E7%BD%AE/</id>
+    <published>2020-05-20T06:32:17.000Z</published>
+    <updated>2020-05-20T06:55:25.342Z</updated>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;安装&quot;&gt;&lt;a href=&quot;#安装&quot; class=&quot;headerlink&quot; title=&quot;安装&quot;&gt;&lt;/a&gt;安装&lt;/h2&gt;&lt;p&gt;cdn&lt;/p&gt;
+&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&amp;lt;script src&amp;#x3D;&amp;quot;https:&amp;#x2F;&amp;#x2F;unpkg.com&amp;#x2F;axios&amp;#x2F;dist&amp;#x2F;axios.min.js&amp;quot;&amp;gt;&amp;lt;&amp;#x2F;script&amp;gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;npm &lt;/p&gt;
+&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;npm install axios -S&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;安装完成后，在main.js文件中:&lt;/p&gt;
+&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;import axios from &amp;#39;axios&amp;#39;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;Vue.prototype.$axios &amp;#x3D; axios&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+    
+    </summary>
+    
+    
+      <category term="vue" scheme="https://katherineqingbo.github.io/categories/vue/"/>
+    
+    
+      <category term="vue" scheme="https://katherineqingbo.github.io/tags/vue/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>ES6之async和await</title>
+    <link href="https://katherineqingbo.github.io/ES6%E4%B9%8Basync%E5%92%8Cawait/"/>
+    <id>https://katherineqingbo.github.io/ES6%E4%B9%8Basync%E5%92%8Cawait/</id>
+    <published>2020-05-19T11:09:29.000Z</published>
+    <updated>2020-05-20T06:01:30.672Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;code&gt;async&lt;/code&gt;和&lt;code&gt;await&lt;/code&gt;是用来处理异步的。即你需要异步像同步一样执行，需要异步返回结果之后，再往下依据结果继续执行。&lt;br&gt;&lt;code&gt;async&lt;/code&gt; 是“异步”的简写，而 await 可以认为是 async wait 的简写。&lt;br&gt;&lt;code&gt;async&lt;/code&gt; 用于申明一个 function 是异步的，而 await 用于等待一个异步方法执行完成。&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="ES6" scheme="https://katherineqingbo.github.io/categories/ES6/"/>
+    
+    
+      <category term="ES6" scheme="https://katherineqingbo.github.io/tags/ES6/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>展开运算符</title>
+    <link href="https://katherineqingbo.github.io/%E5%B1%95%E5%BC%80%E8%BF%90%E7%AE%97%E7%AC%A6/"/>
+    <id>https://katherineqingbo.github.io/%E5%B1%95%E5%BC%80%E8%BF%90%E7%AE%97%E7%AC%A6/</id>
+    <published>2020-05-19T10:07:07.000Z</published>
+    <updated>2020-05-19T10:20:39.714Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;语法：&lt;code&gt;...&lt;/code&gt;&lt;br&gt;类型：数组&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="ES6" scheme="https://katherineqingbo.github.io/categories/ES6/"/>
+    
+    
+      <category term="ES6" scheme="https://katherineqingbo.github.io/tags/ES6/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>ES6字符串模板</title>
+    <link href="https://katherineqingbo.github.io/ES6%E5%AD%97%E7%AC%A6%E4%B8%B2%E6%A8%A1%E6%9D%BF/"/>
+    <id>https://katherineqingbo.github.io/ES6%E5%AD%97%E7%AC%A6%E4%B8%B2%E6%A8%A1%E6%9D%BF/</id>
+    <published>2020-05-19T09:23:35.000Z</published>
+    <updated>2020-05-19T09:59:29.041Z</updated>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;语法&quot;&gt;&lt;a href=&quot;#语法&quot; class=&quot;headerlink&quot; title=&quot;语法&quot;&gt;&lt;/a&gt;语法&lt;/h2&gt;&lt;p&gt;用 `` 代替了单引号和双引号&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="ES6" scheme="https://katherineqingbo.github.io/categories/ES6/"/>
+    
+    
+      <category term="ES6" scheme="https://katherineqingbo.github.io/tags/ES6/"/>
+    
+  </entry>
   
   <entry>
     <title>vue常用的基础指令</title>
@@ -108,25 +220,21 @@
     <link href="https://katherineqingbo.github.io/SASS%E5%85%A5%E9%97%A8/"/>
     <id>https://katherineqingbo.github.io/SASS%E5%85%A5%E9%97%A8/</id>
     <published>2020-05-11T03:02:04.000Z</published>
-    <updated>2020-05-11T11:01:48.774Z</updated>
+    <updated>2020-05-20T11:12:00.920Z</updated>
     
     <summary type="html">
     
-      
-      
-        
-        
-          &lt;a
-        
-      
+      &lt;h2 id=&quot;快速入门&quot;&gt;&lt;a href=&quot;#快速入门&quot; class=&quot;headerlink&quot; title=&quot;快速入门&quot;&gt;&lt;/a&gt;快速入门&lt;/h2&gt;&lt;p&gt;sass让人们受益的一个重要特性就是它为css引入了变量。你可以把反复使用的css属性值 定义成变量，然后通过变量名来引用它们，而无需重复书写这一属性值。&lt;br&gt;sass使用$符号来标识变量，比如$highlight-color和$sidebar-width。&lt;/p&gt;
     
     </summary>
     
     
       <category term="vue" scheme="https://katherineqingbo.github.io/categories/vue/"/>
     
+      <category term="css" scheme="https://katherineqingbo.github.io/categories/vue/css/"/>
     
-      <category term="vue" scheme="https://katherineqingbo.github.io/tags/vue/"/>
+    
+      <category term="vue,css" scheme="https://katherineqingbo.github.io/tags/vue-css/"/>
     
   </entry>
   
@@ -278,17 +386,11 @@
     <link href="https://katherineqingbo.github.io/ES6%E5%B8%B8%E7%94%A8%E6%96%B9%E6%96%B9%E6%B3%95/"/>
     <id>https://katherineqingbo.github.io/ES6%E5%B8%B8%E7%94%A8%E6%96%B9%E6%96%B9%E6%B3%95/</id>
     <published>2020-05-02T09:19:49.000Z</published>
-    <updated>2020-05-11T11:01:48.773Z</updated>
+    <updated>2020-05-19T11:06:01.518Z</updated>
     
     <summary type="html">
     
-      
-      
-        
-        
-          &lt;a
-        
-      
+      &lt;p&gt;ES6常用方方法&lt;/p&gt;
     
     </summary>
     
@@ -386,82 +488,6 @@
       &lt;h2 id=&quot;init&quot;&gt;&lt;a href=&quot;#init&quot; class=&quot;headerlink&quot; title=&quot;init&quot;&gt;&lt;/a&gt;init&lt;/h2&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;$ hexo init [folder]&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
 
 &lt;p&gt;新建一个网站。如果没有设置 &lt;code&gt;folder&lt;/code&gt; ，Hexo 默认在目前的文件夹建立网站。&lt;/p&gt;
-    
-    </summary>
-    
-    
-      <category term="hexo" scheme="https://katherineqingbo.github.io/categories/hexo/"/>
-    
-    
-      <category term="hexo" scheme="https://katherineqingbo.github.io/tags/hexo/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Hexo 的 Next 主题优化一</title>
-    <link href="https://katherineqingbo.github.io/Hexo-%E7%9A%84-Next-%E4%B8%BB%E9%A2%98%E4%BC%98%E5%8C%96%E4%B8%80/"/>
-    <id>https://katherineqingbo.github.io/Hexo-%E7%9A%84-Next-%E4%B8%BB%E9%A2%98%E4%BC%98%E5%8C%96%E4%B8%80/</id>
-    <published>2020-03-26T03:49:14.000Z</published>
-    <updated>2020-05-11T11:01:48.773Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;a
-        
-      
-    
-    </summary>
-    
-    
-      <category term="hexo" scheme="https://katherineqingbo.github.io/categories/hexo/"/>
-    
-    
-      <category term="hexo" scheme="https://katherineqingbo.github.io/tags/hexo/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>用Hexo和GitHub Pages 搭建博客</title>
-    <link href="https://katherineqingbo.github.io/%E7%94%A8Hexo%E5%92%8CGitHub-Pages-%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2/"/>
-    <id>https://katherineqingbo.github.io/%E7%94%A8Hexo%E5%92%8CGitHub-Pages-%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2/</id>
-    <published>2020-03-24T03:20:00.000Z</published>
-    <updated>2020-05-11T11:14:12.112Z</updated>
-    
-    <summary type="html">
-    
-      &lt;p&gt;&lt;strong&gt;声明：转载&lt;/strong&gt;&lt;a href=&quot;https://ryanluoxu.github.io/2017/11/24/用-Hexo-和-GitHub-Pages-搭建博客/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot; title=&quot;Ryan Luo Xu 罗旭&quot;&gt;https://ryanluoxu.github.io/2017/11/24/用-Hexo-和-GitHub-Pages-搭建博客/&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;搭建这个博客走了许多弯路。在这里分享总结之后的思路和简化步骤。&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;Github Pages&lt;/li&gt;
-&lt;li&gt;Hexo 博客框架&lt;/li&gt;
-&lt;li&gt;部署&lt;/li&gt;
-&lt;li&gt;Next 主题&lt;/li&gt;
-&lt;/ul&gt;
-    
-    </summary>
-    
-    
-      <category term="hexo" scheme="https://katherineqingbo.github.io/categories/hexo/"/>
-    
-    
-      <category term="hexo" scheme="https://katherineqingbo.github.io/tags/hexo/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Hello World</title>
-    <link href="https://katherineqingbo.github.io/hello-world/"/>
-    <id>https://katherineqingbo.github.io/hello-world/</id>
-    <published>2020-03-23T01:50:26.923Z</published>
-    <updated>2020-05-11T11:14:12.111Z</updated>
-    
-    <summary type="html">
-    
-      &lt;p&gt;Welcome to &lt;a href=&quot;https://hexo.io/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Hexo&lt;/a&gt;! This is your very first post. Check &lt;a href=&quot;https://hexo.io/docs/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;documentation&lt;/a&gt; for more info. If you get any problems when using Hexo, you can find the answer in &lt;a href=&quot;https://hexo.io/docs/troubleshooting.html&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;troubleshooting&lt;/a&gt; or you can ask me on &lt;a href=&quot;https://github.com/hexojs/hexo/issues&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;GitHub&lt;/a&gt;.&lt;/p&gt;
     
     </summary>
     
