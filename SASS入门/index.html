@@ -28,7 +28,7 @@
 <meta property="og:description" content="快速入门sass让人们受益的一个重要特性就是它为css引入了变量。你可以把反复使用的css属性值 定义成变量，然后通过变量名来引用它们，而无需重复书写这一属性值。sass使用$符号来标识变量，比如$highlight-color和$sidebar-width。">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2020-05-11T03:02:04.000Z">
-<meta property="article:modified_time" content="2020-05-20T11:12:00.920Z">
+<meta property="article:modified_time" content="2020-05-21T03:06:02.187Z">
 <meta property="article:author" content="青波">
 <meta property="article:tag" content="vue,css">
 <meta name="twitter:card" content="summary">
@@ -227,7 +227,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-05-20 19:12:00" itemprop="dateModified" datetime="2020-05-20T19:12:00+08:00">2020-05-20</time>
+                <time title="修改时间：2020-05-21 11:06:02" itemprop="dateModified" datetime="2020-05-21T11:06:02+08:00">2020-05-21</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -312,6 +312,13 @@
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">a &#123;</span><br><span class="line">  @include link-colors(blue, red, green);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">&#x2F;*编译后*&#x2F;</span><br><span class="line"></span><br><span class="line">a &#123; color: blue; &#125;</span><br><span class="line">a:hover &#123; color: red; &#125;</span><br><span class="line">a:visited &#123; color: green; &#125;</span><br></pre></td></tr></table></figure>
 <p>sass允许通过语法$name: value的形式指定每个参数的值。</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">a &#123;</span><br><span class="line">    @include link-colors(</span><br><span class="line">      $normal: blue,</span><br><span class="line">      $visited: green,</span><br><span class="line">      $hover: red</span><br><span class="line">  );</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="使用选择器继承来精简CSS"><a href="#使用选择器继承来精简CSS" class="headerlink" title="使用选择器继承来精简CSS"></a>使用选择器继承来精简CSS</h2><p>使用sass的时候，最后一个减少重复的主要特性就是选择器继承，选择器继承是说一个选择器可以继承为另一个选择器定义的所有样式。这个通过@extend语法实现。这个通过@extend语法实现。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;&#x2F;通过选择器继承继承样式</span><br><span class="line">.error &#123;</span><br><span class="line">  border: 1px solid red;</span><br><span class="line">  background-color: #fdd;</span><br><span class="line">&#125;</span><br><span class="line">.seriousError &#123;</span><br><span class="line">  @extend .error;</span><br><span class="line">  border-width: 3px;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><code>.seriousError</code>不仅会继承<code>.error</code>自身的所有样式，任何跟<code>.error</code>有关的组合选择器样式也会被<code>.seriousError</code>以组合选择器的形式继承</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;&#x2F;.seriousError从.error继承样式</span><br><span class="line">.error a&#123;  &#x2F;&#x2F;应用到.seriousError a</span><br><span class="line">  color: red;</span><br><span class="line">  font-weight: 100;</span><br><span class="line">&#125;</span><br><span class="line">h1.error &#123; &#x2F;&#x2F;应用到hl.seriousError</span><br><span class="line">  font-size: 1.2rem;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>在class=”seriousError”的html元素内的超链接也会变成红色和粗体。</p>
+
     </div>
 
     
@@ -395,7 +402,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#快速入门"><span class="nav-number">1.</span> <span class="nav-text">快速入门</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#vue项目中手动安装"><span class="nav-number">2.</span> <span class="nav-text">vue项目中手动安装</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#使用变量"><span class="nav-number">3.</span> <span class="nav-text">使用变量</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#变量声明"><span class="nav-number">3.1.</span> <span class="nav-text">变量声明</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#变量引用"><span class="nav-number">3.2.</span> <span class="nav-text">变量引用</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#嵌套CSS-规则"><span class="nav-number">4.</span> <span class="nav-text">嵌套CSS 规则</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#父选择器的标识符-amp"><span class="nav-number">4.1.</span> <span class="nav-text">父选择器的标识符&amp;</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#群组选择器的嵌套"><span class="nav-number">4.2.</span> <span class="nav-text">群组选择器的嵌套</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#子组合选择器和同层组合选择器：-gt-、-和"><span class="nav-number">4.3.</span> <span class="nav-text">子组合选择器和同层组合选择器：&gt;、+和~</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#嵌套属性"><span class="nav-number">4.4.</span> <span class="nav-text">嵌套属性</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#导入SASS文件"><span class="nav-number">5.</span> <span class="nav-text">导入SASS文件</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#使用SASS部分文件"><span class="nav-number">5.1.</span> <span class="nav-text">使用SASS部分文件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#默认变量值"><span class="nav-number">5.2.</span> <span class="nav-text">默认变量值</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#嵌套导入"><span class="nav-number">5.3.</span> <span class="nav-text">嵌套导入</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#混合器"><span class="nav-number">6.</span> <span class="nav-text">混合器</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#混合器中的CSS规则"><span class="nav-number">6.1.</span> <span class="nav-text">混合器中的CSS规则</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#给混合器传参"><span class="nav-number">6.2.</span> <span class="nav-text">给混合器传参</span></a></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#快速入门"><span class="nav-number">1.</span> <span class="nav-text">快速入门</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#vue项目中手动安装"><span class="nav-number">2.</span> <span class="nav-text">vue项目中手动安装</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#使用变量"><span class="nav-number">3.</span> <span class="nav-text">使用变量</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#变量声明"><span class="nav-number">3.1.</span> <span class="nav-text">变量声明</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#变量引用"><span class="nav-number">3.2.</span> <span class="nav-text">变量引用</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#嵌套CSS-规则"><span class="nav-number">4.</span> <span class="nav-text">嵌套CSS 规则</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#父选择器的标识符-amp"><span class="nav-number">4.1.</span> <span class="nav-text">父选择器的标识符&amp;</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#群组选择器的嵌套"><span class="nav-number">4.2.</span> <span class="nav-text">群组选择器的嵌套</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#子组合选择器和同层组合选择器：-gt-、-和"><span class="nav-number">4.3.</span> <span class="nav-text">子组合选择器和同层组合选择器：&gt;、+和~</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#嵌套属性"><span class="nav-number">4.4.</span> <span class="nav-text">嵌套属性</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#导入SASS文件"><span class="nav-number">5.</span> <span class="nav-text">导入SASS文件</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#使用SASS部分文件"><span class="nav-number">5.1.</span> <span class="nav-text">使用SASS部分文件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#默认变量值"><span class="nav-number">5.2.</span> <span class="nav-text">默认变量值</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#嵌套导入"><span class="nav-number">5.3.</span> <span class="nav-text">嵌套导入</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#混合器"><span class="nav-number">6.</span> <span class="nav-text">混合器</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#混合器中的CSS规则"><span class="nav-number">6.1.</span> <span class="nav-text">混合器中的CSS规则</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#给混合器传参"><span class="nav-number">6.2.</span> <span class="nav-text">给混合器传参</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#使用选择器继承来精简CSS"><span class="nav-number">7.</span> <span class="nav-text">使用选择器继承来精简CSS</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -411,20 +418,20 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">23</span>
+          <span class="site-state-item-count">25</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
           
-        <span class="site-state-item-count">6</span>
+        <span class="site-state-item-count">7</span>
         <span class="site-state-item-name">分类</span></a>
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">6</span>
+        <span class="site-state-item-count">7</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
